@@ -20,6 +20,7 @@ function App() {
       </header>
 
       <h1>Test change from Pratz</h1>
+      <h1>Test 2 change from Pratz - testing PR</h1>
     </div>
   );
 }
