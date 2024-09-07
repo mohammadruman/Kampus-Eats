@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
         <div className="mt-6 border-t border-gray-300 pt-4">
           <p className="text-center">© 2024 Kampus Eats. All rights reserved.</p>
-          <p className="text-center text-sm">Developed by [Your Name]. All rights reserved.</p>
+        
         </div>
       </div>
     </footer>

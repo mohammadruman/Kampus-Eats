@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -14,12 +15,12 @@ const Home = () => {
             saving time and skipping the lines.
           </p>
           <div className="mt-10">
-            <a 
-              href="#menu" 
+            <Link 
+              to="/foodcourt"
               className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-blue-700"
             >
               Order Now
-            </a>
+            </Link>
           </div>
         </div>
       </div>

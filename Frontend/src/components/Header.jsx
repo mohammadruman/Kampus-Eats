@@ -1,18 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <h1 className="text-xl font-bold text-blue-600">Kampus Eats</h1>
+          <Link to="/">
+            <h1 className="text-xl font-bold text-blue-600 hover:underline">Kampus Eats</h1>
+          </Link>
           <div className="flex space-x-6 items-center">
-            <a href="#menu" className="text-black hover:text-blue-600">Menu</a>
-            <a href="#orders" className="text-black hover:text-blue-600">My Orders</a>
-            <a href="#profile" className="text-black hover:text-blue-600">Profile</a>
-            <a href="#contact" className="text-black hover:text-blue-600">Contact Us</a>
-            <a href="#login" className="text-black hover:text-blue-600">Login</a>
-            <a href="#signup" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Sign Up</a>
+            <Link to="/menu" className="text-black hover:text-blue-600">Menu</Link>
+            <Link to="/orders" className="text-black hover:text-blue-600">My Orders</Link>
+            <Link to="/profile" className="text-black hover:text-blue-600">Profile</Link>
+            <Link to="/contact" className="text-black hover:text-blue-600">Contact Us</Link>
+            <Link to="/login" className="text-black hover:text-blue-600">Login</Link>
+            <Link to="/signup" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Sign Up</Link>
           </div>
         </div>
       </div>
