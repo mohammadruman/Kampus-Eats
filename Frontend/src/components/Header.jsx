@@ -15,7 +15,7 @@ const Header = () => {
             <Link to="/profile" className="text-black hover:text-blue-600">Profile</Link>
             <Link to="/contact" className="text-black hover:text-blue-600">Contact Us</Link>
             <Link to="/login" className="text-black hover:text-blue-600">Login</Link>
-            <Link to="/signup" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Sign Up</Link>
+            <Link to="/register" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Sign Up</Link>
           </div>
         </div>
       </div>

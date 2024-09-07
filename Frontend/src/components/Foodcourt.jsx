@@ -32,6 +32,7 @@ const Foodcourt = () => {
             <RestaurantCard
               key={index}
               name={restaurant.name}
+              campusname={restaurant.campusName}
               cuisine={restaurant.cuisine}
               rating={restaurant.rating}
               deliveryTime={restaurant.deliveryTime}
