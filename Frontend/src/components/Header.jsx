@@ -12,8 +12,7 @@ const Header = () => {
           <div className="flex space-x-6 items-center">
             <Link to="/menu" className="text-black hover:text-blue-600">Menu</Link>
             <Link to="/orders" className="text-black hover:text-blue-600">My Orders</Link>
-            <Link to="/profile" className="text-black hover:text-blue-600">Profile</Link>
-            <Link to="/contact" className="text-black hover:text-blue-600">Contact Us</Link>
+            <Link to="/contact" className="text-black hover:text-blue-600">🛒</Link>
             <Link to="/login" className="text-black hover:text-blue-600">Login</Link>
             <Link to="/register" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Register</Link>
           </div>
