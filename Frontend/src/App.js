@@ -6,6 +6,7 @@ import Login from '../src/pages/Login'
 import Register from '../src/pages/Register'
 import Foodcourt from './components/Foodcourt'; // Import your other components
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import router components
+import MenuPage from './pages/MenuPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route  path="/login" element={<Login/>}/>
           <Route  path="/register" element={<Register/>}/>
           <Route path="/foodcourt" element={<Foodcourt />} />
+          <Route path="/foodcourt/menu" element={<MenuPage />} />
         </Routes>
         <Footer />
       </div>
