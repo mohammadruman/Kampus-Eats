@@ -1,4 +1,5 @@
 
+import { restaurants } from '../utils/mockData';
 import img from '../Image/img.jpg'
 const RestaurantCard=({name, campusname, cuisine, rating  ,time  })=>{
     return (
