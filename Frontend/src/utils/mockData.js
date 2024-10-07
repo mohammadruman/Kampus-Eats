@@ -272,9 +272,9 @@
 // ];
 
 
-
 export const restaurants = [
   {
+    id: 1, // Unique ID
     name: "Foodcourt 1",
     campusName: "Campus 10",
     cuisine: "Dosa, Idli, Sambhar, Vada, Sambar Rice",
@@ -283,6 +283,7 @@ export const restaurants = [
     price: "200",
   },
   {
+    id: 2, // Unique ID
     name: "Foodcourt 2",
     campusName: "Campus 13",
     cuisine: "Pizza, Pasta, Garlic Bread, Salad",
@@ -291,6 +292,7 @@ export const restaurants = [
     price: "350",
   },
   {
+    id: 3, // Unique ID
     name: "Foodcourt 3",
     campusName: "Campus 2",
     cuisine: "Burgers, Fries, Shakes, Onion Rings",
@@ -299,6 +301,7 @@ export const restaurants = [
     price: "250",
   },
   {
+    id: 4, // Unique ID
     name: "Foodcourt 4",
     campusName: "Campus 5",
     cuisine: "Indian Thali, Raita, Chapati, Pickle",
@@ -307,6 +310,7 @@ export const restaurants = [
     price: "300",
   },
   {
+    id: 5, // Unique ID
     name: "Foodcourt 5",
     campusName: "Campus 9",
     cuisine: "Noodles, Momos, Spring Rolls, Fried Rice",
@@ -315,6 +319,7 @@ export const restaurants = [
     price: "150",
   },
   {
+    id: 6, // Unique ID
     name: "Foodcourt 6",
     campusName: "Campus 12",
     cuisine: "Wraps, Sandwiches, Smoothies, Fries",
@@ -322,8 +327,8 @@ export const restaurants = [
     deliveryTime: "8",
     price: "180",
   },
-  
   {
+    id: 7, // Unique ID
     name: "Foodcourt 7",
     campusName: "Campus 18",
     cuisine: "Sushi, Ramen, Tempura, Miso Soup",
@@ -332,6 +337,7 @@ export const restaurants = [
     price: "400",
   },
   {
+    id: 8, // Unique ID
     name: "Foodcourt 8",
     campusName: "Campus 6",
     cuisine: "Burritos, Tacos, Quesadillas, Nachos",
@@ -339,7 +345,7 @@ export const restaurants = [
     deliveryTime: "15",
     price: "250",
   },
- 
 ];
+
 
 
