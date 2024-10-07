@@ -271,7 +271,6 @@
 //   }
 // ];
 
-
 export const restaurants = [
   {
     id: 1, // Unique ID
@@ -281,6 +280,7 @@ export const restaurants = [
     rating: "4.5",
     deliveryTime: "10",
     price: "200",
+    isVeg: true,
   },
   {
     id: 2, // Unique ID
@@ -290,6 +290,7 @@ export const restaurants = [
     rating: "4.0",
     deliveryTime: "15",
     price: "350",
+    isVeg: true,
   },
   {
     id: 3, // Unique ID
@@ -299,6 +300,7 @@ export const restaurants = [
     rating: "4.7",
     deliveryTime: "12",
     price: "250",
+    isVeg: false,
   },
   {
     id: 4, // Unique ID
@@ -308,6 +310,7 @@ export const restaurants = [
     rating: "4.6",
     deliveryTime: "18",
     price: "300",
+    isVeg: true,
   },
   {
     id: 5, // Unique ID
@@ -317,6 +320,7 @@ export const restaurants = [
     rating: "4.3",
     deliveryTime: "10",
     price: "150",
+    isVeg: true,
   },
   {
     id: 6, // Unique ID
@@ -326,6 +330,7 @@ export const restaurants = [
     rating: "4.2",
     deliveryTime: "8",
     price: "180",
+    isVeg: true,
   },
   {
     id: 7, // Unique ID
@@ -335,6 +340,7 @@ export const restaurants = [
     rating: "4.8",
     deliveryTime: "20",
     price: "400",
+    isVeg: false,
   },
   {
     id: 8, // Unique ID
@@ -344,8 +350,6 @@ export const restaurants = [
     rating: "4.4",
     deliveryTime: "15",
     price: "250",
+    isVeg: false,
   },
 ];
-
-
-
