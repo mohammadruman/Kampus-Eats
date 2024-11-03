@@ -23,19 +23,19 @@ const RestaurantMenu = () => {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Menu for {restaurant.name}</h1>
-      
+      {/* <h1 className="text-2xl font-bold mb-4">Menu for {restaurant.name}</h1>
+       */}
       
       {/* Display the cuisines as a list */}
       <div className="mt-4">
         <h2 className="text-xl font-semibold mb-2">Cuisines Available:</h2>
        
-          {cuisineList.map((cuisine, index) => (
+          {cuisineList.map((cuisines, index) => (
             <ul
               key={index}
               className="bg-gray-200 p-2 rounded-md mb-2 text-lg text-gray-700"
             >
-              {cuisine}
+              {cuisines}
             </ul>
           ))}
        
