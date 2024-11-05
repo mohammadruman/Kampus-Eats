@@ -1,23 +1,21 @@
 import { Link } from "react-router-dom"
 import Footer from "../components/Footer"
 import { useState } from "react"
-import { account } from "../config/Appwrite";
 
 const Register = () => {
   const [userData, SetUserData ]= useState({username:"", email:"",password:""});
   const RegisteruserButton= async()=>{
    //appwrite logic 
-   const SignPromise =  account.create(
-    userData.username,
-    userData.email,
-    userData.password
-   )
-   SignPromise.then(function(res){
-    console.log(res);
-   },function(err){
-    console.log(err);
-   })
-    
+  //  const SignPromise =  account.create(
+  //   userData.username,
+  //   userData.email,
+  //   userData.password
+  //  )
+  //  SignPromise.then(function(res){
+  //   console.log(res);
+  //  },function(err){
+  //   console.log(err);
+  //  })
    
     }
 
