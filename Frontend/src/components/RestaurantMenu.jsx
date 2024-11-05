@@ -1,47 +1,41 @@
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { restaurants } from '../utils/mockData'; // Importing the restaurants data
+import { mockData } from "../utils/mockData"; // Ensure mockData is an array
 
-const RestaurantMenu = () => {
+const MenuPage = () => {
   const { id } = useParams(); // Get the restaurant ID from the URL
-  const [restaurant, setRestaurant] = useState(null); // State to hold the restaurant data
+  const restaurantId = parseInt(id, 10);
 
-  useEffect(() => {
-    // Find the restaurant with the matching id from the restaurants array
-    const restaurantData = restaurants.find((res) => res.id === parseInt(id));
-    
-    // Set the found restaurant data to the state
-    setRestaurant(restaurantData);
-  }, [id]);
+  // Find the restaurant data by ID
+  const restaurant = mockData.data.restaurants.find((res) => res.id === restaurantId);
 
   if (!restaurant) {
-    return <p>Loading restaurant menu...</p>;
+    return <p>Restaurant not found</p>;
   }
-
-  // Split the cuisines into an array
-  const cuisineList = restaurant.cuisine.split(', '); // Assuming cuisines are comma-separated
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Menu for {restaurant.name}</h1>
-      
-      
-      {/* Display the cuisines as a list */}
-      <div className="mt-4">
-        <h2 className="text-xl font-semibold mb-2">Cuisines Available:</h2>
-       
-          {cuisineList.map((cuisine, index) => (
-            <ul
-              key={index}
-              className="bg-gray-200 p-2 rounded-md mb-2 text-lg text-gray-700"
-            >
-              {cuisine}
-            </ul>
-          ))}
-       
+      <h2 className="text-2xl font-bold mb-4">{restaurant.name}</h2>
+      <h3 className="text-xl mb-2">Campus: {restaurant.campusName}</h3>
+      <p className="text-gray-600 mb-4">Rating: {restaurant.overallRating} ⭐</p>
+      <h4 className="text-lg font-semibold mb-3">Menu:</h4>
+
+      <div className="space-y-4 w-10/12 mx-auto">
+        {restaurant.cuisines.map((cuisine, index) => (
+          <div key={index} className="flex items-center justify-between p-4 bg-gray-100 rounded-lg shadow-md">
+            <div className="flex flex-col flex-grow">
+              <h5 className="font-bold text-lg">{cuisine.name}</h5>
+              <p className="font-medium">Price: ₹{cuisine.price}</p>
+              <p className="text-gray-700">{cuisine.description}</p>
+            </div>
+            <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
+              Add
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default RestaurantMenu;
+export default MenuPage;
