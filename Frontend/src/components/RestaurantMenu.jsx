@@ -1,10 +1,24 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { mockData } from "../utils/mockData"; // Ensure mockData is an array
+import  { useDispatch } from 'react-redux';
+import { addToCart } from '../feature/cart/cartSlice';
 
 const MenuPage = () => {
   const { id } = useParams(); // Get the restaurant ID from the URL
+
   const restaurantId = parseInt(id, 10);
+
+  //function Add to cart
+  function handleAddToCart(e , cuisine){
+    e.preventDefault()
+    const newProduct = {
+      id: cuisine.id,
+      name: cuisine.name,
+      price: cuisine.price
+    }
+    addToCart(newProduct)
+  }
 
   // Find the restaurant data by ID
   const restaurant = mockData.data.restaurants.find((res) => res.id === restaurantId);
@@ -28,7 +42,7 @@ const MenuPage = () => {
               <p className="font-medium">Price: ₹{cuisine.price}</p>
               <p className="text-gray-700">{cuisine.description}</p>
             </div>
-            <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
+            <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600" onClick={e => handleAddToCart(e, cuisine)}>
               Add
             </button>
           </div>
