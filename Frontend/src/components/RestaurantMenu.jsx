@@ -6,7 +6,7 @@ import { addToCart } from '../feature/cart/cartSlice';
 
 const MenuPage = () => {
   const { id } = useParams(); // Get the restaurant ID from the URL
-
+  const dispatch = useDispatch()
   const restaurantId = parseInt(id, 10);
 
   //function Add to cart
@@ -17,7 +17,7 @@ const MenuPage = () => {
       name: cuisine.name,
       price: cuisine.price
     }
-    addToCart(newProduct)
+   dispatch( addToCart(newProduct))
   }
 
   // Find the restaurant data by ID
