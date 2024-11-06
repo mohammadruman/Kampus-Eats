@@ -10,12 +10,27 @@ export const mockData = {
         deliveryTime: 10,
         averagePrice: 200,
         cuisines: [
-          { name: "Dosa", price: 50, rating: 4.6, description: "A thin, crispy crepe made from fermented rice and lentil batter." },
-          { name: "Idli", price: 30, rating: 4.4, description: "Steamed rice cakes served with chutney and sambar." },
-          { name: "Sambhar", price: 40, rating: 4.5, description: "A spicy lentil soup with vegetables, flavored with tamarind." },
-          { name: "Vada", price: 20, rating: 4.3, description: "Deep-fried lentil fritters that are crispy on the outside." },
-          { name: "Sambar Rice", price: 60, rating: 4.7, description: "A combination of rice and spicy lentil stew." }
-        ]
+          { name: "Masala Dosa", price: 70, rating: 4.8, description: "Crispy dosa filled with spiced mashed potatoes." },
+          { name: "Pav Bhaji", price: 80, rating: 4.7, description: "Thick vegetable curry served with buttered bread rolls." },
+          { name: "Biryani", price: 120, rating: 4.9, description: "Aromatic rice cooked with spices, meat, or vegetables." },
+          { name: "Paneer Butter Masala", price: 90, rating: 4.6, description: "Cottage cheese cubes in a creamy tomato-based sauce." },
+          { name: "Butter Naan", price: 40, rating: 4.5, description: "Soft, buttery flatbread cooked in a tandoor." },
+          { name: "Chicken Tikka", price: 100, rating: 4.8, description: "Marinated, grilled chicken pieces with spices." },
+          { name: "Aloo Paratha", price: 50, rating: 4.4, description: "Stuffed flatbread filled with seasoned mashed potatoes." },
+          { name: "Rajma Chawal", price: 60, rating: 4.7, description: "Red kidney bean curry served with rice." },
+          { name: "Chole Bhature", price: 70, rating: 4.8, description: "Spicy chickpea curry served with fried bread." },
+          { name: "Pani Puri", price: 30, rating: 4.5, description: "Crispy hollow puris filled with spicy, tangy water." },
+          { name: "Paneer Tikka", price: 80, rating: 4.7, description: "Grilled cubes of paneer marinated in spices." },
+          { name: "Veg Pulao", price: 60, rating: 4.6, description: "Fragrant rice cooked with vegetables and mild spices." },
+          { name: "Chicken Curry", price: 100, rating: 4.7, description: "A rich, spicy curry made with tender chicken." },
+          { name: "Mutton Biryani", price: 150, rating: 4.9, description: "A flavorful rice dish cooked with mutton and spices." },
+          { name: "Egg Curry", price: 70, rating: 4.4, description: "Hard-boiled eggs in a spicy tomato-based curry." },
+          { name: "Rasam", price: 30, rating: 4.3, description: "A spicy, tangy soup made with tamarind and tomatoes." },
+          { name: "Gobi Manchurian", price: 60, rating: 4.6, description: "Fried cauliflower florets tossed in a spicy sauce." },
+          { name: "Vegetable Thali", price: 100, rating: 4.8, description: "A variety of Indian dishes served on a single platter." },
+          { name: "Dal Tadka", price: 50, rating: 4.6, description: "Lentils cooked with spices and tempered with ghee." },
+          { name: "Fish Fry", price: 120, rating: 4.7, description: "Marinated fish coated in spices and fried to perfection." }
+        ]        
       },
       {
         id: 2,

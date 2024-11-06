@@ -10,10 +10,11 @@ const Foodcourt = () => {
   console.log(cuisines);
 
   // Function to filter restaurants based on search query
-  const filteredRestaurants = resData.data.restaurants.filter((restaurant) =>
-    restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    restaurant.cuisines.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredRestaurants = resData.data.restaurants.filter((restaurant) => {
+    const cuisines = restaurant.cuisines.map(cuisine => cuisine.name).join(", ").toLowerCase(); // Map cuisine names and join them
+    return cuisines.includes(searchQuery.toLowerCase()); // Filters based on cuisine only
+  });
+  
 
   return (
     <div className="p-6">

@@ -10,7 +10,7 @@ const Header = () => {
             <h1 className="text-xl font-bold text-blue-600 hover:underline">Kampus Eats</h1>
           </Link>
           <div className="flex space-x-6 items-center">
-            <Link to="/menu" className="text-black hover:text-blue-600">Menu</Link>
+            <Link to="/foodcourt" className="text-black hover:text-blue-600">Food-court</Link>
             <Link to="/orders" className="text-black hover:text-blue-600">My Orders</Link>
             <Link to="/contact" className="text-black hover:text-blue-600">🛒</Link>
             <Link to="/login" className="text-black hover:text-blue-600">Login</Link>
