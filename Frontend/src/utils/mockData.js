@@ -10,27 +10,133 @@ export const mockData = {
         deliveryTime: 10,
         averagePrice: 200,
         cuisines: [
-          { name: "Masala Dosa", price: 70, rating: 4.8, description: "Crispy dosa filled with spiced mashed potatoes." },
-          { name: "Pav Bhaji", price: 80, rating: 4.7, description: "Thick vegetable curry served with buttered bread rolls." },
-          { name: "Biryani", price: 120, rating: 4.9, description: "Aromatic rice cooked with spices, meat, or vegetables." },
-          { name: "Paneer Butter Masala", price: 90, rating: 4.6, description: "Cottage cheese cubes in a creamy tomato-based sauce." },
-          { name: "Butter Naan", price: 40, rating: 4.5, description: "Soft, buttery flatbread cooked in a tandoor." },
-          { name: "Chicken Tikka", price: 100, rating: 4.8, description: "Marinated, grilled chicken pieces with spices." },
-          { name: "Aloo Paratha", price: 50, rating: 4.4, description: "Stuffed flatbread filled with seasoned mashed potatoes." },
-          { name: "Rajma Chawal", price: 60, rating: 4.7, description: "Red kidney bean curry served with rice." },
-          { name: "Chole Bhature", price: 70, rating: 4.8, description: "Spicy chickpea curry served with fried bread." },
-          { name: "Pani Puri", price: 30, rating: 4.5, description: "Crispy hollow puris filled with spicy, tangy water." },
-          { name: "Paneer Tikka", price: 80, rating: 4.7, description: "Grilled cubes of paneer marinated in spices." },
-          { name: "Veg Pulao", price: 60, rating: 4.6, description: "Fragrant rice cooked with vegetables and mild spices." },
-          { name: "Chicken Curry", price: 100, rating: 4.7, description: "A rich, spicy curry made with tender chicken." },
-          { name: "Mutton Biryani", price: 150, rating: 4.9, description: "A flavorful rice dish cooked with mutton and spices." },
-          { name: "Egg Curry", price: 70, rating: 4.4, description: "Hard-boiled eggs in a spicy tomato-based curry." },
-          { name: "Rasam", price: 30, rating: 4.3, description: "A spicy, tangy soup made with tamarind and tomatoes." },
-          { name: "Gobi Manchurian", price: 60, rating: 4.6, description: "Fried cauliflower florets tossed in a spicy sauce." },
-          { name: "Vegetable Thali", price: 100, rating: 4.8, description: "A variety of Indian dishes served on a single platter." },
-          { name: "Dal Tadka", price: 50, rating: 4.6, description: "Lentils cooked with spices and tempered with ghee." },
-          { name: "Fish Fry", price: 120, rating: 4.7, description: "Marinated fish coated in spices and fried to perfection." }
-        ]        
+          {
+            name: "Masala Dosa",
+            price: 70,
+            rating: 4.8,
+            description: "Crispy dosa filled with spiced mashed potatoes.",
+          },
+          {
+            name: "Pav Bhaji",
+            price: 80,
+            rating: 4.7,
+            description:
+              "Thick vegetable curry served with buttered bread rolls.",
+          },
+          {
+            name: "Biryani",
+            price: 120,
+            rating: 4.9,
+            description:
+              "Aromatic rice cooked with spices, meat, or vegetables.",
+          },
+          {
+            name: "Paneer Butter Masala",
+            price: 90,
+            rating: 4.6,
+            description: "Cottage cheese cubes in a creamy tomato-based sauce.",
+          },
+          {
+            name: "Butter Naan",
+            price: 40,
+            rating: 4.5,
+            description: "Soft, buttery flatbread cooked in a tandoor.",
+          },
+          {
+            name: "Chicken Tikka",
+            price: 100,
+            rating: 4.8,
+            description: "Marinated, grilled chicken pieces with spices.",
+          },
+          {
+            name: "Aloo Paratha",
+            price: 50,
+            rating: 4.4,
+            description:
+              "Stuffed flatbread filled with seasoned mashed potatoes.",
+          },
+          {
+            name: "Rajma Chawal",
+            price: 60,
+            rating: 4.7,
+            description: "Red kidney bean curry served with rice.",
+          },
+          {
+            name: "Chole Bhature",
+            price: 70,
+            rating: 4.8,
+            description: "Spicy chickpea curry served with fried bread.",
+          },
+          {
+            name: "Pani Puri",
+            price: 30,
+            rating: 4.5,
+            description: "Crispy hollow puris filled with spicy, tangy water.",
+          },
+          {
+            name: "Paneer Tikka",
+            price: 80,
+            rating: 4.7,
+            description: "Grilled cubes of paneer marinated in spices.",
+          },
+          {
+            name: "Veg Pulao",
+            price: 60,
+            rating: 4.6,
+            description:
+              "Fragrant rice cooked with vegetables and mild spices.",
+          },
+          {
+            name: "Chicken Curry",
+            price: 100,
+            rating: 4.7,
+            description: "A rich, spicy curry made with tender chicken.",
+          },
+          {
+            name: "Mutton Biryani",
+            price: 150,
+            rating: 4.9,
+            description: "A flavorful rice dish cooked with mutton and spices.",
+          },
+          {
+            name: "Egg Curry",
+            price: 70,
+            rating: 4.4,
+            description: "Hard-boiled eggs in a spicy tomato-based curry.",
+          },
+          {
+            name: "Rasam",
+            price: 30,
+            rating: 4.3,
+            description: "A spicy, tangy soup made with tamarind and tomatoes.",
+          },
+          {
+            name: "Gobi Manchurian",
+            price: 60,
+            rating: 4.6,
+            description: "Fried cauliflower florets tossed in a spicy sauce.",
+          },
+          {
+            name: "Vegetable Thali",
+            price: 100,
+            rating: 4.8,
+            description:
+              "A variety of Indian dishes served on a single platter.",
+          },
+          {
+            name: "Dal Tadka",
+            price: 50,
+            rating: 4.6,
+            description: "Lentils cooked with spices and tempered with ghee.",
+          },
+          {
+            name: "Fish Fry",
+            price: 120,
+            rating: 4.7,
+            description:
+              "Marinated fish coated in spices and fried to perfection.",
+          },
+        ],
       },
       {
         id: 2,
@@ -40,11 +146,35 @@ export const mockData = {
         deliveryTime: 15,
         averagePrice: 350,
         cuisines: [
-          { name: "Pizza", price: 150, rating: 4.3, description: "A savory dish of Italian origin consisting of a round, flat base of leavened wheat-based dough topped with tomatoes, cheese, and various other ingredients." },
-          { name: "Pasta", price: 120, rating: 4.0, description: "Italian dish made from wheat flour and water, often served with sauces." },
-          { name: "Garlic Bread", price: 70, rating: 4.1, description: "Bread topped with garlic and olive oil or butter, baked until crispy." },
-          { name: "Salad", price: 50, rating: 4.0, description: "A dish consisting of mixed vegetables, often dressed with oil or vinegar." }
-        ]
+          {
+            name: "Pizza",
+            price: 150,
+            rating: 4.3,
+            description:
+              "A savory dish of Italian origin consisting of a round, flat base of leavened wheat-based dough topped with tomatoes, cheese, and various other ingredients.",
+          },
+          {
+            name: "Pasta",
+            price: 120,
+            rating: 4.0,
+            description:
+              "Italian dish made from wheat flour and water, often served with sauces.",
+          },
+          {
+            name: "Garlic Bread",
+            price: 70,
+            rating: 4.1,
+            description:
+              "Bread topped with garlic and olive oil or butter, baked until crispy.",
+          },
+          {
+            name: "Salad",
+            price: 50,
+            rating: 4.0,
+            description:
+              "A dish consisting of mixed vegetables, often dressed with oil or vinegar.",
+          },
+        ],
       },
       {
         id: 3,
@@ -54,11 +184,34 @@ export const mockData = {
         deliveryTime: 12,
         averagePrice: 250,
         cuisines: [
-          { name: "Burgers", price: 120, rating: 4.8, description: "A sandwich consisting of a cooked patty of ground meat, usually beef, placed inside a sliced bun." },
-          { name: "Fries", price: 80, rating: 4.6, description: "Deep-fried potato strips that are crispy and golden." },
-          { name: "Shakes", price: 100, rating: 4.7, description: "A sweet, creamy beverage made by blending milk and ice cream." },
-          { name: "Onion Rings", price: 50, rating: 4.5, description: "Slices of onion dipped in batter and deep-fried until crispy." }
-        ]
+          {
+            name: "Burgers",
+            price: 120,
+            rating: 4.8,
+            description:
+              "A sandwich consisting of a cooked patty of ground meat, usually beef, placed inside a sliced bun.",
+          },
+          {
+            name: "Fries",
+            price: 80,
+            rating: 4.6,
+            description: "Deep-fried potato strips that are crispy and golden.",
+          },
+          {
+            name: "Shakes",
+            price: 100,
+            rating: 4.7,
+            description:
+              "A sweet, creamy beverage made by blending milk and ice cream.",
+          },
+          {
+            name: "Onion Rings",
+            price: 50,
+            rating: 4.5,
+            description:
+              "Slices of onion dipped in batter and deep-fried until crispy.",
+          },
+        ],
       },
       {
         id: 4,
@@ -68,11 +221,34 @@ export const mockData = {
         deliveryTime: 18,
         averagePrice: 300,
         cuisines: [
-          { name: "Indian Thali", price: 200, rating: 4.7, description: "A platter with a variety of Indian dishes, served with rice or bread." },
-          { name: "Raita", price: 40, rating: 4.4, description: "A yogurt-based side dish mixed with vegetables or fruits." },
-          { name: "Chapati", price: 30, rating: 4.5, description: "A type of unleavened flatbread made from whole wheat flour." },
-          { name: "Pickle", price: 10, rating: 4.3, description: "Preserved fruits or vegetables in a spiced brine." }
-        ]
+          {
+            name: "Indian Thali",
+            price: 200,
+            rating: 4.7,
+            description:
+              "A platter with a variety of Indian dishes, served with rice or bread.",
+          },
+          {
+            name: "Raita",
+            price: 40,
+            rating: 4.4,
+            description:
+              "A yogurt-based side dish mixed with vegetables or fruits.",
+          },
+          {
+            name: "Chapati",
+            price: 30,
+            rating: 4.5,
+            description:
+              "A type of unleavened flatbread made from whole wheat flour.",
+          },
+          {
+            name: "Pickle",
+            price: 10,
+            rating: 4.3,
+            description: "Preserved fruits or vegetables in a spiced brine.",
+          },
+        ],
       },
       {
         id: 5,
@@ -82,11 +258,34 @@ export const mockData = {
         deliveryTime: 10,
         averagePrice: 150,
         cuisines: [
-          { name: "Noodles", price: 90, rating: 4.2, description: "Long, thin strands of dough made from wheat, served in broth or stir-fried." },
-          { name: "Momos", price: 60, rating: 4.3, description: "Steamed or fried dumplings filled with meat or vegetables." },
-          { name: "Spring Rolls", price: 80, rating: 4.1, description: "Crispy rolls filled with vegetables or meat, served with dipping sauce." },
-          { name: "Fried Rice", price: 70, rating: 4.2, description: "Stir-fried rice mixed with vegetables and proteins." }
-        ]
+          {
+            name: "Noodles",
+            price: 90,
+            rating: 4.2,
+            description:
+              "Long, thin strands of dough made from wheat, served in broth or stir-fried.",
+          },
+          {
+            name: "Momos",
+            price: 60,
+            rating: 4.3,
+            description:
+              "Steamed or fried dumplings filled with meat or vegetables.",
+          },
+          {
+            name: "Spring Rolls",
+            price: 80,
+            rating: 4.1,
+            description:
+              "Crispy rolls filled with vegetables or meat, served with dipping sauce.",
+          },
+          {
+            name: "Fried Rice",
+            price: 70,
+            rating: 4.2,
+            description: "Stir-fried rice mixed with vegetables and proteins.",
+          },
+        ],
       },
       {
         id: 6,
@@ -96,11 +295,34 @@ export const mockData = {
         deliveryTime: 8,
         averagePrice: 180,
         cuisines: [
-          { name: "Wraps", price: 80, rating: 4.3, description: "A flatbread rolled around fillings like meat, vegetables, or cheese." },
-          { name: "Sandwiches", price: 70, rating: 4.2, description: "Two slices of bread with fillings such as meat, cheese, or vegetables." },
-          { name: "Smoothies", price: 100, rating: 4.1, description: "A thick beverage made from blended fruits and yogurt or milk." },
-          { name: "Fries", price: 50, rating: 4.0, description: "Deep-fried potato strips that are crispy and golden." }
-        ]
+          {
+            name: "Wraps",
+            price: 80,
+            rating: 4.3,
+            description:
+              "A flatbread rolled around fillings like meat, vegetables, or cheese.",
+          },
+          {
+            name: "Sandwiches",
+            price: 70,
+            rating: 4.2,
+            description:
+              "Two slices of bread with fillings such as meat, cheese, or vegetables.",
+          },
+          {
+            name: "Smoothies",
+            price: 100,
+            rating: 4.1,
+            description:
+              "A thick beverage made from blended fruits and yogurt or milk.",
+          },
+          {
+            name: "Fries",
+            price: 50,
+            rating: 4.0,
+            description: "Deep-fried potato strips that are crispy and golden.",
+          },
+        ],
       },
       {
         id: 7,
@@ -110,11 +332,34 @@ export const mockData = {
         deliveryTime: 20,
         averagePrice: 400,
         cuisines: [
-          { name: "Sushi", price: 200, rating: 4.9, description: "Japanese dish consisting of vinegared rice combined with seafood and vegetables." },
-          { name: "Ramen", price: 180, rating: 4.8, description: "Noodle soup dish originating from Japan, typically topped with meat and vegetables." },
-          { name: "Tempura", price: 150, rating: 4.7, description: "Battered and deep-fried seafood and vegetables." },
-          { name: "Miso Soup", price: 70, rating: 4.5, description: "Traditional Japanese soup made with dashi stock and miso paste." }
-        ]
+          {
+            name: "Sushi",
+            price: 200,
+            rating: 4.9,
+            description:
+              "Japanese dish consisting of vinegared rice combined with seafood and vegetables.",
+          },
+          {
+            name: "Ramen",
+            price: 180,
+            rating: 4.8,
+            description:
+              "Noodle soup dish originating from Japan, typically topped with meat and vegetables.",
+          },
+          {
+            name: "Tempura",
+            price: 150,
+            rating: 4.7,
+            description: "Battered and deep-fried seafood and vegetables.",
+          },
+          {
+            name: "Miso Soup",
+            price: 70,
+            rating: 4.5,
+            description:
+              "Traditional Japanese soup made with dashi stock and miso paste.",
+          },
+        ],
       },
       {
         id: 8,
@@ -124,11 +369,35 @@ export const mockData = {
         deliveryTime: 15,
         averagePrice: 250,
         cuisines: [
-          { name: "Burritos", price: 120, rating: 4.4, description: "A flour tortilla wrapped around a filling of meat, beans, and rice." },
-          { name: "Tacos", price: 100, rating: 4.5, description: "A folded or rolled tortilla filled with various ingredients." },
-          { name: "Quesadillas", price: 110, rating: 4.3, description: "Tortillas filled with cheese and other ingredients, grilled until crispy." },
-          { name: "Nachos", price: 90, rating: 4.4, description: "Tortilla chips topped with cheese and other toppings, served with salsa." }
-        ]
+          {
+            name: "Burritos",
+            price: 120,
+            rating: 4.4,
+            description:
+              "A flour tortilla wrapped around a filling of meat, beans, and rice.",
+          },
+          {
+            name: "Tacos",
+            price: 100,
+            rating: 4.5,
+            description:
+              "A folded or rolled tortilla filled with various ingredients.",
+          },
+          {
+            name: "Quesadillas",
+            price: 110,
+            rating: 4.3,
+            description:
+              "Tortillas filled with cheese and other ingredients, grilled until crispy.",
+          },
+          {
+            name: "Nachos",
+            price: 90,
+            rating: 4.4,
+            description:
+              "Tortilla chips topped with cheese and other toppings, served with salsa.",
+          },
+        ],
       },
       {
         id: 9,
@@ -138,10 +407,28 @@ export const mockData = {
         deliveryTime: 17,
         averagePrice: 230,
         cuisines: [
-          { name: "Pancakes", price: 90, rating: 4.0, description: "Fluffy breakfast cakes made from batter and cooked on a griddle." },
-          { name: "Waffles", price: 100, rating: 4.1, description: "Grid-patterned cakes made from batter and served with toppings." },
-          { name: "Crepes", price: 95, rating: 4.2, description: "Thin French pancakes, often filled with sweet or savory ingredients." }
-        ]
+          {
+            name: "Pancakes",
+            price: 90,
+            rating: 4.0,
+            description:
+              "Fluffy breakfast cakes made from batter and cooked on a griddle.",
+          },
+          {
+            name: "Waffles",
+            price: 100,
+            rating: 4.1,
+            description:
+              "Grid-patterned cakes made from batter and served with toppings.",
+          },
+          {
+            name: "Crepes",
+            price: 95,
+            rating: 4.2,
+            description:
+              "Thin French pancakes, often filled with sweet or savory ingredients.",
+          },
+        ],
       },
       {
         id: 10,
@@ -151,10 +438,26 @@ export const mockData = {
         deliveryTime: 12,
         averagePrice: 260,
         cuisines: [
-          { name: "Burgers", price: 120, rating: 4.4, description: "A sandwich consisting of a cooked patty of ground meat, usually beef, placed inside a sliced bun." },
-          { name: "Fries", price: 80, rating: 4.2, description: "Deep-fried potato strips that are crispy and golden." },
-          { name: "Chicken Wings", price: 150, rating: 4.5, description: "Deep-fried chicken parts, often served with sauce." }
-        ]
+          {
+            name: "Burgers",
+            price: 120,
+            rating: 4.4,
+            description:
+              "A sandwich consisting of a cooked patty of ground meat, usually beef, placed inside a sliced bun.",
+          },
+          {
+            name: "Fries",
+            price: 80,
+            rating: 4.2,
+            description: "Deep-fried potato strips that are crispy and golden.",
+          },
+          {
+            name: "Chicken Wings",
+            price: 150,
+            rating: 4.5,
+            description: "Deep-fried chicken parts, often served with sauce.",
+          },
+        ],
       },
       {
         id: 11,
@@ -164,10 +467,26 @@ export const mockData = {
         deliveryTime: 10,
         averagePrice: 170,
         cuisines: [
-          { name: "Tandoori Chicken", price: 200, rating: 4.6, description: "Chicken marinated in yogurt and spices, grilled to perfection." },
-          { name: "Paneer Tikka", price: 150, rating: 4.5, description: "Grilled cubes of paneer marinated in spices." },
-          { name: "Roti", price: 20, rating: 4.0, description: "Whole wheat flatbread cooked on a hot griddle." }
-        ]
+          {
+            name: "Tandoori Chicken",
+            price: 200,
+            rating: 4.6,
+            description:
+              "Chicken marinated in yogurt and spices, grilled to perfection.",
+          },
+          {
+            name: "Paneer Tikka",
+            price: 150,
+            rating: 4.5,
+            description: "Grilled cubes of paneer marinated in spices.",
+          },
+          {
+            name: "Roti",
+            price: 20,
+            rating: 4.0,
+            description: "Whole wheat flatbread cooked on a hot griddle.",
+          },
+        ],
       },
       {
         id: 12,
@@ -177,10 +496,26 @@ export const mockData = {
         deliveryTime: 18,
         averagePrice: 190,
         cuisines: [
-          { name: "Fish Curry", price: 180, rating: 4.5, description: "Spicy curry made with fish and a blend of spices." },
-          { name: "Rice", price: 40, rating: 4.1, description: "Steamed or boiled grains of rice." },
-          { name: "Salad", price: 30, rating: 4.3, description: "A dish consisting of mixed vegetables, often dressed with oil or vinegar." }
-        ]
+          {
+            name: "Fish Curry",
+            price: 180,
+            rating: 4.5,
+            description: "Spicy curry made with fish and a blend of spices.",
+          },
+          {
+            name: "Rice",
+            price: 40,
+            rating: 4.1,
+            description: "Steamed or boiled grains of rice.",
+          },
+          {
+            name: "Salad",
+            price: 30,
+            rating: 4.3,
+            description:
+              "A dish consisting of mixed vegetables, often dressed with oil or vinegar.",
+          },
+        ],
       },
       {
         id: 13,
@@ -190,10 +525,26 @@ export const mockData = {
         deliveryTime: 10,
         averagePrice: 160,
         cuisines: [
-          { name: "Chicken Wings", price: 150, rating: 4.4, description: "Deep-fried chicken parts, often served with sauce." },
-          { name: "Onion Rings", price: 60, rating: 4.1, description: "Slices of onion dipped in batter and deep-fried until crispy." },
-          { name: "Fries", price: 50, rating: 4.0, description: "Deep-fried potato strips that are crispy and golden." }
-        ]
+          {
+            name: "Chicken Wings",
+            price: 150,
+            rating: 4.4,
+            description: "Deep-fried chicken parts, often served with sauce.",
+          },
+          {
+            name: "Onion Rings",
+            price: 60,
+            rating: 4.1,
+            description:
+              "Slices of onion dipped in batter and deep-fried until crispy.",
+          },
+          {
+            name: "Fries",
+            price: 50,
+            rating: 4.0,
+            description: "Deep-fried potato strips that are crispy and golden.",
+          },
+        ],
       },
       {
         id: 14,
@@ -203,10 +554,27 @@ export const mockData = {
         deliveryTime: 12,
         averagePrice: 230,
         cuisines: [
-          { name: "Caesar Salad", price: 130, rating: 4.5, description: "A green salad of romaine lettuce and croutons dressed with Caesar dressing." },
-          { name: "Grilled Chicken", price: 200, rating: 4.7, description: "Chicken breast marinated and cooked until tender." },
-          { name: "Garlic Bread", price: 50, rating: 4.4, description: "Bread topped with garlic and olive oil or butter, baked until crispy." }
-        ]
+          {
+            name: "Caesar Salad",
+            price: 130,
+            rating: 4.5,
+            description:
+              "A green salad of romaine lettuce and croutons dressed with Caesar dressing.",
+          },
+          {
+            name: "Grilled Chicken",
+            price: 200,
+            rating: 4.7,
+            description: "Chicken breast marinated and cooked until tender.",
+          },
+          {
+            name: "Garlic Bread",
+            price: 50,
+            rating: 4.4,
+            description:
+              "Bread topped with garlic and olive oil or butter, baked until crispy.",
+          },
+        ],
       },
       {
         id: 15,
@@ -216,10 +584,26 @@ export const mockData = {
         deliveryTime: 15,
         averagePrice: 250,
         cuisines: [
-          { name: "Paneer Butter Masala", price: 200, rating: 4.5, description: "Paneer cooked in a creamy tomato sauce with spices." },
-          { name: "Naan", price: 30, rating: 4.0, description: "Leavened Indian flatbread baked in a tandoor." },
-          { name: "Biryani", price: 220, rating: 4.8, description: "A fragrant rice dish cooked with spices and marinated meat." }
-        ]
+          {
+            name: "Paneer Butter Masala",
+            price: 200,
+            rating: 4.5,
+            description: "Paneer cooked in a creamy tomato sauce with spices.",
+          },
+          {
+            name: "Naan",
+            price: 30,
+            rating: 4.0,
+            description: "Leavened Indian flatbread baked in a tandoor.",
+          },
+          {
+            name: "Biryani",
+            price: 220,
+            rating: 4.8,
+            description:
+              "A fragrant rice dish cooked with spices and marinated meat.",
+          },
+        ],
       },
       {
         id: 16,
@@ -229,10 +613,26 @@ export const mockData = {
         deliveryTime: 11,
         averagePrice: 180,
         cuisines: [
-          { name: "Tandoori Chicken", price: 200, rating: 4.6, description: "Chicken marinated in yogurt and spices, grilled to perfection." },
-          { name: "Paneer Tikka", price: 140, rating: 4.3, description: "Grilled cubes of paneer marinated in spices." },
-          { name: "Roti", price: 20, rating: 4.0, description: "Whole wheat flatbread cooked on a hot griddle." }
-        ]
+          {
+            name: "Tandoori Chicken",
+            price: 200,
+            rating: 4.6,
+            description:
+              "Chicken marinated in yogurt and spices, grilled to perfection.",
+          },
+          {
+            name: "Paneer Tikka",
+            price: 140,
+            rating: 4.3,
+            description: "Grilled cubes of paneer marinated in spices.",
+          },
+          {
+            name: "Roti",
+            price: 20,
+            rating: 4.0,
+            description: "Whole wheat flatbread cooked on a hot griddle.",
+          },
+        ],
       },
       {
         id: 17,
@@ -242,10 +642,27 @@ export const mockData = {
         deliveryTime: 10,
         averagePrice: 150,
         cuisines: [
-          { name: "Tandoori Chicken", price: 200, rating: 4.4, description: "Chicken marinated in yogurt and spices, grilled to perfection." },
-          { name: "Paneer Tikka", price: 140, rating: 4.3, description: "Grilled cubes of paneer marinated in spices." },
-          { name: "Roti", price: 20, rating: 4.0, description: "A type of unleavened flatbread made from whole wheat flour." }
-        ]
+          {
+            name: "Tandoori Chicken",
+            price: 200,
+            rating: 4.4,
+            description:
+              "Chicken marinated in yogurt and spices, grilled to perfection.",
+          },
+          {
+            name: "Paneer Tikka",
+            price: 140,
+            rating: 4.3,
+            description: "Grilled cubes of paneer marinated in spices.",
+          },
+          {
+            name: "Roti",
+            price: 20,
+            rating: 4.0,
+            description:
+              "A type of unleavened flatbread made from whole wheat flour.",
+          },
+        ],
       },
       {
         id: 18,
@@ -255,10 +672,26 @@ export const mockData = {
         deliveryTime: 12,
         averagePrice: 220,
         cuisines: [
-          { name: "Fish Curry", price: 180, rating: 4.1, description: "Spicy curry made with fish and a blend of spices." },
-          { name: "Rice", price: 40, rating: 4.2, description: "Steamed or boiled grains of rice." },
-          { name: "Salad", price: 30, rating: 4.3, description: "A dish consisting of mixed vegetables, often dressed with oil or vinegar." }
-        ]
+          {
+            name: "Fish Curry",
+            price: 180,
+            rating: 4.1,
+            description: "Spicy curry made with fish and a blend of spices.",
+          },
+          {
+            name: "Rice",
+            price: 40,
+            rating: 4.2,
+            description: "Steamed or boiled grains of rice.",
+          },
+          {
+            name: "Salad",
+            price: 30,
+            rating: 4.3,
+            description:
+              "A dish consisting of mixed vegetables, often dressed with oil or vinegar.",
+          },
+        ],
       },
       {
         id: 19,
@@ -268,10 +701,26 @@ export const mockData = {
         deliveryTime: 14,
         averagePrice: 170,
         cuisines: [
-          { name: "Chicken Wings", price: 150, rating: 4.0, description: "Deep-fried chicken parts, often served with sauce." },
-          { name: "Onion Rings", price: 60, rating: 4.1, description: "Slices of onion dipped in batter and deep-fried until crispy." },
-          { name: "Fries", price: 50, rating: 4.0, description: "Deep-fried potato strips that are crispy and golden." }
-        ]
+          {
+            name: "Chicken Wings",
+            price: 150,
+            rating: 4.0,
+            description: "Deep-fried chicken parts, often served with sauce.",
+          },
+          {
+            name: "Onion Rings",
+            price: 60,
+            rating: 4.1,
+            description:
+              "Slices of onion dipped in batter and deep-fried until crispy.",
+          },
+          {
+            name: "Fries",
+            price: 50,
+            rating: 4.0,
+            description: "Deep-fried potato strips that are crispy and golden.",
+          },
+        ],
       },
       {
         id: 20,
@@ -281,10 +730,27 @@ export const mockData = {
         deliveryTime: 16,
         averagePrice: 240,
         cuisines: [
-          { name: "Caesar Salad", price: 130, rating: 4.3, description: "A green salad of romaine lettuce and croutons dressed with Caesar dressing." },
-          { name: "Grilled Chicken", price: 200, rating: 4.5, description: "Chicken breast marinated and cooked until tender." },
-          { name: "Garlic Bread", price: 50, rating: 4.4, description: "Bread topped with garlic and olive oil or butter, baked until crispy." }
-        ]
+          {
+            name: "Caesar Salad",
+            price: 130,
+            rating: 4.3,
+            description:
+              "A green salad of romaine lettuce and croutons dressed with Caesar dressing.",
+          },
+          {
+            name: "Grilled Chicken",
+            price: 200,
+            rating: 4.5,
+            description: "Chicken breast marinated and cooked until tender.",
+          },
+          {
+            name: "Garlic Bread",
+            price: 50,
+            rating: 4.4,
+            description:
+              "Bread topped with garlic and olive oil or butter, baked until crispy.",
+          },
+        ],
       },
     ],
   },

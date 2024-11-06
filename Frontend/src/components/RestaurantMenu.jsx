@@ -21,39 +21,53 @@ const MenuPage = () => {
 
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">{restaurant.name}</h2>
-      <h3 className="text-xl mb-2">Campus: {restaurant.campusName}</h3>
-      <p className="text-gray-600 mb-4">Rating: {restaurant.overallRating} ⭐</p>
-      <div className="mb-6">
-        <input
-          type="text"
-          placeholder="Search for Foodcourt or cuisines"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="border border-gray-300 rounded-md px-4 py-2 w-6/12"
-        />
-      </div>
-      <h4 className="text-lg font-semibold mb-3">Menu:</h4>
+      <h2 className="text-2xl font-bold mb-2 mr-28">{restaurant.name}</h2>
+      <h3 className="text-xl mb-2 mr-28">Campus: {restaurant.campusName}</h3>
+      <p className="text-gray-600 mb-4 mr-28">Rating: {restaurant.overallRating} ⭐</p>
 
-      <div className="space-y-4 w-10/12 mx-auto">
+      {/* Search bar */}
+      <div className="mb-6 flex justify-center">
+        <div className='max-w-4xl w-full'>
+          <input
+            type="text"
+            placeholder="Search for Foodcourt or cuisines"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="border border-zinc-600 rounded-md px-4 py-2  w-full max-w-4xl outline-none"
+          />
+        </div>
+      </div>
+
+      <h3 className="font-medium text-2xl text-center mb-4 mr-36 ">Menu</h3>
+      <hr className='max-w-screen h-[4px] mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-zinc-500' />
+
+      {/* Menu list */}
+      <div className="flex flex-col items-center max-w-4xl mx-auto">
         {filteredCuisines.length > 0 ? (
           filteredCuisines.map((cuisine, index) => (
-            <div key={index} className="flex items-center justify-between p-4 bg-gray-100 rounded-lg shadow-md">
-              <div className="flex flex-col flex-grow">
+            <div key={index} className="flex items-center justify-between p-4 bg-gray-100 rounded-lg shadow-md mb-4 w-full">
+              {/* Cuisine details */}
+              <div className="flex-grow">
                 <h5 className="font-bold text-lg">{cuisine.name}</h5>
                 <p className="font-medium">Price: ₹{cuisine.price}</p>
                 <p className="text-gray-700">{cuisine.description}</p>
               </div>
-              <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
-                Add
-              </button>
+
+              {/* Add to Cart button */}
+              <div className="flex-shrink px-4">
+                <button className="bg-blue-500 text-white px-6 py-2 rounded-lg font-light hover:bg-blue-600 w-28 text-center">
+                  Add
+                </button>
+              </div>
             </div>
           ))
         ) : (
-          <p className="text-gray-500">No cuisines match your search.</p>
+          <p className="text-gray-500 text-center">No cuisines match your search.</p>
         )}
       </div>
     </div>
+
+
   );
 };
 

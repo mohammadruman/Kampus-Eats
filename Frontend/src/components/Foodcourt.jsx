@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import RestaurantCard from "./RestaurantCard";
-import { mockData } from "../utils/mockData"; 
-import { Link } from "react-router-dom"; 
+import { mockData } from "../utils/mockData";
+import { Link } from "react-router-dom";
 
 const Foodcourt = () => {
   const resData = mockData;
@@ -14,10 +14,10 @@ const Foodcourt = () => {
     const cuisines = restaurant.cuisines.map(cuisine => cuisine.name).join(", ").toLowerCase(); // Map cuisine names and join them
     return cuisines.includes(searchQuery.toLowerCase()); // Filters based on cuisine only
   });
-  
+
 
   return (
-    <div className="p-6">
+    <div className="p-4">
       {/* Search Bar */}
       <div className="mb-6">
         <input

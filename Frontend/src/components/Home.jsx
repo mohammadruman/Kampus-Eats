@@ -21,12 +21,7 @@ const Home = () => {
             >
               Order Now
             </Link>
-            <Link
-              to="/foodcourt/menu"
-              className="inline-block bg-blue-600 text-white ml-2 px-6 py-3 rounded-md text-lg font-semibold hover:bg-blue-700"
-            >
-              Menu
-            </Link>
+
           </div>
         </div>
       </div>
