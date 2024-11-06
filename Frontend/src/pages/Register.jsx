@@ -43,7 +43,7 @@ const Register = () => {
 						<input
 							className="w-full px-4 py-2 border-2 border-black outline-0"
 							type="password"
-							placeholder="Enter your password"
+							placeholder="password must be of 8 character"
 							name="password"
 						/>
 						<button className="w-full px-4 py-4 text-lg font-bold text-white bg-black rounded-lg hover:bg-gray-500 hover:text-black ">

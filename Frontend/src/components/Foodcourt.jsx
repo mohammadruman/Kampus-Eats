@@ -42,7 +42,11 @@ const Foodcourt = () => {
             </Link>
           ))
         ) : (
-          <p className="col-span-4 text-center text-gray-600">No results found</p>
+          <div className="col-span-4 text-center text-gray-600">
+          <p className="text-4xl font-bold text-blue-500 animate-pulse">Oops!</p>
+          <p className="text-xl text-gray-500 mt-2">No results found</p>
+          <p className="text-md text-gray-400 mt-1">Try searching for something else!</p>
+        </div>
         )}
       </div>
     </div>

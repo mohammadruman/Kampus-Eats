@@ -10,6 +10,7 @@ import MenuPage from './pages/MenuPage';
 import RestaurantMenu from './components/RestaurantMenu';
 import { AuthProvider } from './utils/AuthContext';
 import PrivateRoutes from './utils/PrivateRoutes';
+import Cart from './components/Cart';
 
 function App() {
 	return (
@@ -21,9 +22,10 @@ function App() {
 						<Route path="/" element={<Home />} />
 						<Route path="/login" element={<Login/>}/>
 						<Route path="/register" element={<Register />} />
-
+						<Route path="/cart" element={<Cart />} />
 						<Route element={<PrivateRoutes />}>
 							<Route path="/foodcourt" element={<Foodcourt />} />
+							
 							<Route path="/foodcourt/menu" element={<MenuPage />} />
 							<Route path="/restaurant-menu/:id" element={<RestaurantMenu />} />
 						</Route>

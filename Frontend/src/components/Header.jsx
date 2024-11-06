@@ -20,7 +20,7 @@ const Header = () => {
 						<Link to="/orders" className="text-black hover:text-blue-600">
 							My Orders
 						</Link>
-						<Link to="/contact" className="text-black hover:text-blue-600">
+						<Link to="/cart" className="text-black hover:text-blue-600">
 							🛒
 						</Link>
 						{user ? (
