@@ -1,10 +1,5 @@
-import {
-	React,
-	useContext,
-	useState,
-	useEffect,
-	createContext,
-} from 'react'
+import { React, useContext, useState, useEffect, createContext } from 'react'
+import { account, ID } from './appwrite.jsx'
 
 const AuthContext = createContext()
 
@@ -13,17 +8,64 @@ export const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState(null)
 
 	useEffect(() => {
-		setLoading(false)
+		checkAuth()
 	}, [])
 
-	const login = (userData) => {}
+	const login = async (userData) => {
+		console.log(userData)
+		setLoading(true)
+		try {
+			let response = await account.createEmailPasswordSession(
+				userData.email,
+				userData.password
+			)
+			console.log('session: ', response)
+			let accountDetails = await account.get()
+			setUser(accountDetails)
+		} catch (error) {
+			console.error(error)
+		}
+		setLoading(false)
+	}
 
-	const logout = () => {}	
+	const logout = async () => {
+		console.log('logged out')
+		await account.deleteSession('current')
+		setUser(null)
+	}
 
-	const register = (userData) => {}
+	const register = async (userData) => {
+		console.log(userData)
+		setLoading(true)
+		try {
+			let response = await account.create(
+				ID.unique(),
+				userData.email,
+				userData.password,
+				userData.username
+			)
+			console.log('session: ', response)
+
+			await account.createEmailPasswordSession(
+				userData.email,
+				userData.password
+			)
+			let accountDetails = await account.get()
+			setUser(accountDetails)
+		} catch (error) {
+			console.error(error)
+		}
+		setLoading(false)
+	}
 
 	//for persisting a user
-	const checkAuth = () => {}	
+	const checkAuth = async () => {
+		try {
+			let accountDetails = await account.get()
+			setUser(accountDetails)
+		} catch (error) {}
+		setLoading(false)
+	}
 
 	const contextData = {
 		user,
@@ -34,12 +76,14 @@ export const AuthProvider = ({ children }) => {
 	}
 
 	return (
-	<AuthContext.Provider value={contextData}>
-		{loading ? <div>Loading...</div> : children}
-	</AuthContext.Provider>
+		<AuthContext.Provider value={contextData}>
+			{loading ? <div>Loading...</div> : children}
+		</AuthContext.Provider>
 	)
 }
 
-export const useAuth = () => {return useContext(AuthContext)}
+export const useAuth = () => {
+	return useContext(AuthContext)
+}
 
 export default AuthContext
