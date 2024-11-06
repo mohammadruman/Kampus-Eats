@@ -11,15 +11,21 @@ const Home = () => {
             <span className="block text-black">Need To Wait For Food</span>
           </h1>
           <p className="mt-6 text-lg text-gray-700">
-            Pre-order your meals online and pick them up from the college canteen, 
+            Pre-order your meals online and pick them up from the college canteen,
             saving time and skipping the lines.
           </p>
           <div className="mt-10">
-            <Link 
+            <Link
               to="/foodcourt"
               className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-blue-700"
             >
               Order Now
+            </Link>
+            <Link
+              to="/foodcourt/menu"
+              className="inline-block bg-blue-600 text-white ml-2 px-6 py-3 rounded-md text-lg font-semibold hover:bg-blue-700"
+            >
+              Menu
             </Link>
           </div>
         </div>

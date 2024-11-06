@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="space-y-2">
             <h3 className="font-semibold">Quick Links</h3>
             <ul>
-              <li><a href="#menu" className="hover:underline">Menu</a></li>
+              <li><a href="/foodcourt/menu" className="hover:underline">Menu</a></li>
               <li><a href="#orders" className="hover:underline">My Orders</a></li>
               <li><a href="#profile" className="hover:underline">Profile</a></li>
               <li><a href="#contact" className="hover:underline">Contact Us</a></li>
@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
         <div className="mt-6 border-t border-gray-300 pt-4">
           <p className="text-center">© 2024 Kampus Eats. All rights reserved.</p>
-        
+
         </div>
       </div>
     </footer>
