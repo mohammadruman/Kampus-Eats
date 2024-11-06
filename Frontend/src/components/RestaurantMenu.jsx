@@ -23,7 +23,7 @@ const MenuPage = () => {
     <div className="p-6">
       <h2 className="text-2xl font-bold mb-2 mr-28">{restaurant.name}</h2>
       <h3 className="text-xl mb-2 mr-28">Campus: {restaurant.campusName}</h3>
-      <p className="text-gray-600 mb-4 mr-28">Rating: {restaurant.overallRating} ⭐</p>
+      <p className="text-gray-600 text-lg mb-4 mr-28">Rating: {restaurant.overallRating}⭐</p>
 
       {/* Search bar */}
       <div className="mb-6 flex justify-center">
@@ -33,7 +33,7 @@ const MenuPage = () => {
             placeholder="Search for Foodcourt or cuisines"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="border border-zinc-600 rounded-md px-4 py-2  w-full max-w-4xl outline-none"
+            className="border border-zinc-600 rounded-md px-4 py-2  w-full max-w-4xl outline-none focus:border-cyan-800"
           />
         </div>
       </div>
@@ -45,12 +45,12 @@ const MenuPage = () => {
       <div className="flex flex-col items-center max-w-4xl mx-auto">
         {filteredCuisines.length > 0 ? (
           filteredCuisines.map((cuisine, index) => (
-            <div key={index} className="flex items-center justify-between p-4 bg-gray-100 rounded-lg shadow-md mb-4 w-full">
+            <div key={index} className="flex items-center justify-between p-4 bg-cyan-100 rounded-lg shadow-md mb-4 w-full hover:shadow-md hover:shadow-gray-500">
               {/* Cuisine details */}
-              <div className="flex-grow">
+              <div className="flex-grow ">
                 <h5 className="font-bold text-lg">{cuisine.name}</h5>
                 <p className="font-medium">Price: ₹{cuisine.price}</p>
-                <p className="text-gray-700">{cuisine.description}</p>
+                <p className="text-gray-700 italic md:italic sm:italic">{cuisine.description}</p>
               </div>
 
               {/* Add to Cart button */}
