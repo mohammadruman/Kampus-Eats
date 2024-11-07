@@ -9,6 +9,7 @@ export const mockData = {
         overallRating: 4.5,
         deliveryTime: 10,
         averagePrice: 200,
+        image: "../Image/img1.jpg",
         cuisines: [
           {
             name: "Masala Dosa",
@@ -145,6 +146,7 @@ export const mockData = {
         overallRating: 4.0,
         deliveryTime: 15,
         averagePrice: 350,
+        imageUrl: "",
         cuisines: [
           {
             name: "Pizza",
@@ -183,6 +185,7 @@ export const mockData = {
         overallRating: 4.7,
         deliveryTime: 12,
         averagePrice: 250,
+        imageUrl: "",
         cuisines: [
           {
             name: "Burgers",
@@ -220,6 +223,7 @@ export const mockData = {
         overallRating: 4.6,
         deliveryTime: 18,
         averagePrice: 300,
+        imageUrl: "",
         cuisines: [
           {
             name: "Indian Thali",
@@ -257,6 +261,7 @@ export const mockData = {
         overallRating: 4.3,
         deliveryTime: 10,
         averagePrice: 150,
+        imageUrl: "",
         cuisines: [
           {
             name: "Noodles",
@@ -294,6 +299,7 @@ export const mockData = {
         overallRating: 4.2,
         deliveryTime: 8,
         averagePrice: 180,
+        imageUrl: "",
         cuisines: [
           {
             name: "Wraps",
@@ -331,6 +337,7 @@ export const mockData = {
         overallRating: 4.8,
         deliveryTime: 20,
         averagePrice: 400,
+        imageUrl: "",
         cuisines: [
           {
             name: "Sushi",
@@ -368,6 +375,7 @@ export const mockData = {
         overallRating: 4.4,
         deliveryTime: 15,
         averagePrice: 250,
+        imageUrl: "",
         cuisines: [
           {
             name: "Burritos",
@@ -406,6 +414,7 @@ export const mockData = {
         overallRating: 4.1,
         deliveryTime: 17,
         averagePrice: 230,
+        imageUrl: "",
         cuisines: [
           {
             name: "Pancakes",
@@ -437,6 +446,7 @@ export const mockData = {
         overallRating: 4.3,
         deliveryTime: 12,
         averagePrice: 260,
+        imageUrl: "",
         cuisines: [
           {
             name: "Burgers",
@@ -466,6 +476,7 @@ export const mockData = {
         overallRating: 4.5,
         deliveryTime: 10,
         averagePrice: 170,
+        imageUrl: "",
         cuisines: [
           {
             name: "Tandoori Chicken",
@@ -495,6 +506,7 @@ export const mockData = {
         overallRating: 4.2,
         deliveryTime: 18,
         averagePrice: 190,
+        imageUrl: "",
         cuisines: [
           {
             name: "Fish Curry",
@@ -524,6 +536,7 @@ export const mockData = {
         overallRating: 4.6,
         deliveryTime: 10,
         averagePrice: 160,
+        imageUrl: "",
         cuisines: [
           {
             name: "Chicken Wings",
@@ -553,6 +566,7 @@ export const mockData = {
         overallRating: 4.3,
         deliveryTime: 12,
         averagePrice: 230,
+        imageUrl: "",
         cuisines: [
           {
             name: "Caesar Salad",
@@ -583,6 +597,7 @@ export const mockData = {
         overallRating: 4.4,
         deliveryTime: 15,
         averagePrice: 250,
+        imageUrl: "",
         cuisines: [
           {
             name: "Paneer Butter Masala",
@@ -612,6 +627,7 @@ export const mockData = {
         overallRating: 4.2,
         deliveryTime: 11,
         averagePrice: 180,
+        imageUrl: "",
         cuisines: [
           {
             name: "Tandoori Chicken",
@@ -641,6 +657,7 @@ export const mockData = {
         overallRating: 4.3,
         deliveryTime: 10,
         averagePrice: 150,
+        imageUrl: "",
         cuisines: [
           {
             name: "Tandoori Chicken",
@@ -671,6 +688,7 @@ export const mockData = {
         overallRating: 4.2,
         deliveryTime: 12,
         averagePrice: 220,
+        imageUrl: "",
         cuisines: [
           {
             name: "Fish Curry",
@@ -700,6 +718,7 @@ export const mockData = {
         overallRating: 4.1,
         deliveryTime: 14,
         averagePrice: 170,
+        imageUrl: "",
         cuisines: [
           {
             name: "Chicken Wings",
@@ -729,6 +748,7 @@ export const mockData = {
         overallRating: 4.5,
         deliveryTime: 16,
         averagePrice: 240,
+        imageUrl: "",
         cuisines: [
           {
             name: "Caesar Salad",
