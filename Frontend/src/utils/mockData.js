@@ -9,7 +9,6 @@ export const mockData = {
         overallRating: 4.5,
         deliveryTime: 10,
         averagePrice: 200,
-        image: "../Image/img1.jpg",
         cuisines: [
           {
             name: "Masala Dosa",
@@ -486,7 +485,7 @@ export const mockData = {
               "Chicken marinated in yogurt and spices, grilled to perfection.",
           },
           {
-            name: "Paneer Tikka",
+            name: "Paneer",
             price: 150,
             rating: 4.5,
             description: "Grilled cubes of paneer marinated in spices.",
@@ -637,7 +636,7 @@ export const mockData = {
               "Chicken marinated in yogurt and spices, grilled to perfection.",
           },
           {
-            name: "Paneer Tikka",
+            name: "Paneer",
             price: 140,
             rating: 4.3,
             description: "Grilled cubes of paneer marinated in spices.",
