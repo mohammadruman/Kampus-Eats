@@ -1,7 +1,7 @@
 import img from "../Image/img.jpg";
 
 const RestaurantCard = (props) => {
-    const { resData = {} } = props;
+    const { resData = {}, } = props;
 
     const {
         name,
@@ -10,17 +10,17 @@ const RestaurantCard = (props) => {
         cuisines,
         deliveryTime,
     } = resData;
-  
 
 
-//format cuisne function
-const formatCuisines = (cuisinesArray, limit = 2) => {
-    const cuisineNames = cuisinesArray.map(cuisine => cuisine.name); // Extract names by iterating through all the cuisne object
-    if (cuisineNames.length <= limit) {
-        return cuisineNames.join(", ");
-    }
-    return `${cuisineNames.slice(0, limit).join(", ")}...`;
-};
+
+    //format cuisne function
+    const formatCuisines = (cuisinesArray, limit = 2) => {
+        const cuisineNames = cuisinesArray.map(cuisine => cuisine.name); // Extract names by iterating through all the cuisne object
+        if (cuisineNames.length <= limit) {
+            return cuisineNames.join(", ");
+        }
+        return `${cuisineNames.slice(0, limit).join(", ")}...`;
+    };
 
     return (
         <div className="m-4 p-4 w-[250px] h-[300px] rounded-lg bg-gray-100 hover:bg-gray-200">
