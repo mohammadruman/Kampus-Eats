@@ -12,8 +12,8 @@ import cartReducer from "./feature/cart/cartSlice"
 //confgure key we want to persist
 const cartPersistConfig = {
     key: "cart",
-    storage: storage,
-    whitelist: ['cart'] //only cart will be persisted
+    storage,
+    // whitelist: ['cart'] //only cart will be persisted
 }
 
 const rootReducer = combineReducers({
