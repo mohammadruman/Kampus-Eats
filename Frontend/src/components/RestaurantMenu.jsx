@@ -15,7 +15,6 @@ const MenuPage = () => {
   const cartItemList = useSelector(state => selectItemListByRestrauntId(state, restaurantId))
 
   function cartItemQuantity( itemId ){
-    // console.log("fetched item list",cartItemList)
     const item = cartItemList.find( item => item.itemId === itemId)
     if (item) return item.quantity
     else return 0 
