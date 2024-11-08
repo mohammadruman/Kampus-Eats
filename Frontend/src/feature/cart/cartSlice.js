@@ -38,12 +38,18 @@ const cartSlice = createSlice({
             //? deliverytime
         },
         removeFromCart : function( state, action){
-            const existingItemIndex = state.items.find( item => item.id === action.payload.id)
-            if (existingItemIndex === -1){
-                const existingItem = state.items[existingItemIndex]
-                state.totalQuantity -= existingItem.quantity
-                state.totalPrice -= (existingItem.quantity * existingItem.price)
-                state.items.splice(existingItemIndex, 1)
+            //check if the item exists
+            const existingItemIndex = state.items.findIndex( item => {
+                if ( item.restrauntId === action.payload.restrauntId) return item.itemId === action.payload.itemId
+                return false
+            })
+            if (existingItemIndex !== -1){
+                let existingItem = state.items[existingItemIndex]
+                if (existingItem.quantity > 1) existingItem.quantity -- 
+                //completely remove the item
+                else state.items.splice(existingItemIndex,1)
+                state.totalQuantity -= 1
+                state.totalPrice -= existingItem.price
             }
         },
         updateItemQuantity : function(state, action){
@@ -71,29 +77,36 @@ const cartSlice = createSlice({
 //export actions
 export const { addToCart, removeFromCart, updateItemQuantity, clearCart } = cartSlice.actions
 
-export const selectItems = state => state.items
-export const selectTotalPrice = state => state.totalPrice
-export const selectTotalQuantity = state => state.totalQuantity
+export const selectItems = state => state.cart.items
+export const selectTotalPrice = state => state.cart.totalPrice
+export const selectTotalQuantity = state => state.cart.totalQuantity
 
 const selectRestrauntId = (state, restrauntId) => restrauntId
 const selectItemId = (state, itemId) => itemId
 
 //Filter Items by restraunt (memoized selector)
-export const selectItemsByRestrauntId = createSelector([selectItems, selectRestrauntId ], (items, restrauntId) => {
-    if (Array.isArray(items)){
-        const itemList = items.filter( item => item.restrauntId === restrauntId )
-        if (Array.isArray(itemList)) return itemList
-        else return []
-    }else{
-        return []
+export const selectItemListByRestrauntId = createSelector([selectItems, selectRestrauntId ], (items, restrauntId) => {
+    if (items.length === 0) return []
+    else{
+        //filter list by restraunt id
+        const itemList = items.filter( item => item.restrauntId === restrauntId)
+        return itemList
     }
     
 })
+// export const selectItemListByRestrauntId = (state, restrauntId) => {
+//     console.log("state:",state)
+//     if (state.cart.items.length === 0) return []
+//     else{
+//         const itemsList = state.cart.items.filter( item => item.restrauntId === restrauntId)
+//         return itemsList
+//     } 
+// }
 
 //get specific item with itemId in a specific restraunt
-export const selectItemByIdAndRestraunt = createSelector([selectItemsByRestrauntId, selectItemId], (itemList, itemId) => {
-    return itemList.find( item => item.itemId === itemId)
-}) 
+// export const selectItemByIdAndRestraunt = createSelector([selectItemsByRestrauntId, selectItemId], (itemList, itemId) => {
+//     return itemList.find( item => item.itemId === itemId)
+// }) 
 
 
 

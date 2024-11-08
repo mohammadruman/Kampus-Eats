@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { mockData } from "../utils/mockData"; // Ensure mockData is an array
 import  { useDispatch, useSelector } from 'react-redux';
-import { addToCart,selectItemsByRestrauntId } from '../feature/cart/cartSlice';
+import { addToCart , removeFromCart, selectItemListByRestrauntId} from '../feature/cart/cartSlice';
 import PlusMinusButton from "./PlusMinusButton"
 
 
@@ -12,10 +12,11 @@ const MenuPage = () => {
   const restaurantId = parseInt(id, 10);
   const restaurant = mockData.data.restaurants.find((res) => res.id === restaurantId);
   //Fetch all items in CART for a specific restraunt
-  const cartItemList = useSelector(state => selectItemsByRestrauntId(state, restaurantId))
+  // const cartItemList = useSelector(state => selectItemsByRestrauntId(state, restaurantId))
+  const cartItemList = useSelector(state => selectItemListByRestrauntId(state, restaurantId))
 
   function cartItemQuantity( itemId ){
-    console.log("fetched item list",cartItemList)
+    // console.log("fetched item list",cartItemList)
     const item = cartItemList.find( item => item.itemId === itemId)
     if (item) return item.quantity
     else return 0 
@@ -35,6 +36,12 @@ const MenuPage = () => {
     }
     console.log(addToCart(newProduct))
    dispatch( addToCart(newProduct))
+  }
+
+  //handle remove from cart
+  function handleRemoveFromCart(e, restrauntId, itemId){
+    e.preventDefault()
+    dispatch(removeFromCart({restrauntId, itemId}))
   }
 
   
@@ -61,7 +68,15 @@ const MenuPage = () => {
               <p className="text-gray-700">{cuisine.description}</p>
             </div>
             {
-              cartItemQuantity(index) > 0 ? <PlusMinusButton/> : (
+              cartItemQuantity(index) > 0 ? 
+              <PlusMinusButton 
+                cuisine={cuisine}
+                restaurantId={restaurantId}
+                index={index}
+                addFn={e => handleAddToCart(e, cuisine, index)} 
+                removeFn={e => handleRemoveFromCart(e,restaurantId, index)} 
+                value={cartItemQuantity(index)}
+              /> : (
             <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600" onClick={e => handleAddToCart(e, cuisine, index)}>
               Add
             </button>
