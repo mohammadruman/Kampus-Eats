@@ -12,7 +12,6 @@ const MenuPage = () => {
   const restaurantId = parseInt(id, 10);
   const restaurant = mockData.data.restaurants.find((res) => res.id === restaurantId);
   //Fetch all items in CART for a specific restraunt
-  // const cartItemList = useSelector(state => selectItemsByRestrauntId(state, restaurantId))
   const cartItemList = useSelector(state => selectItemListByRestrauntId(state, restaurantId))
 
   function cartItemQuantity( itemId ){
@@ -34,7 +33,6 @@ const MenuPage = () => {
       price: cuisine.price,
       deliveryTime: restaurant.deliveryTime
     }
-    console.log(addToCart(newProduct))
    dispatch( addToCart(newProduct))
   }
 

@@ -22,7 +22,6 @@ const cartSlice = createSlice({
     initialState: cart,
     reducers:{
         addToCart : function( state, action){
-            console.log("state items", state)
             //check if the item exists
             const existingItem = state.items.find( item => {
                 if ( item.restrauntId === action.payload.restrauntId) return item.itemId === action.payload.itemId
@@ -52,22 +51,6 @@ const cartSlice = createSlice({
                 state.totalPrice -= existingItem.price
             }
         },
-        updateItemQuantity : function(state, action){
-            const existingItem = state.items.find(item => item.id === action.payload.id);
-            if (existingItem){
-                if ( action.payload.sign === "-"){
-                    const difference = action.payload.quantity - existingItem.quantity;
-                    existingItem.quantity = action.payload.quantity;
-                    state.totalQuantity += difference;
-                    state.totalPrice += difference * existingItem.price;
-                }else{
-                    const difference = action.payload.quantity + existingItem.quantity;
-                    existingItem.quantity = action.payload.quantity;
-                    state.totalQuantity += difference;
-                    state.totalPrice += difference * existingItem.price;
-                }
-            }
-        },
         clearCart : function( state){
             state.items = []
         }
@@ -75,14 +58,13 @@ const cartSlice = createSlice({
 })
 
 //export actions
-export const { addToCart, removeFromCart, updateItemQuantity, clearCart } = cartSlice.actions
+export const { addToCart, removeFromCart, clearCart } = cartSlice.actions
 
 export const selectItems = state => state.cart.items
 export const selectTotalPrice = state => state.cart.totalPrice
 export const selectTotalQuantity = state => state.cart.totalQuantity
 
 const selectRestrauntId = (state, restrauntId) => restrauntId
-const selectItemId = (state, itemId) => itemId
 
 //Filter Items by restraunt (memoized selector)
 export const selectItemListByRestrauntId = createSelector([selectItems, selectRestrauntId ], (items, restrauntId) => {
@@ -94,21 +76,6 @@ export const selectItemListByRestrauntId = createSelector([selectItems, selectRe
     }
     
 })
-// export const selectItemListByRestrauntId = (state, restrauntId) => {
-//     console.log("state:",state)
-//     if (state.cart.items.length === 0) return []
-//     else{
-//         const itemsList = state.cart.items.filter( item => item.restrauntId === restrauntId)
-//         return itemsList
-//     } 
-// }
-
-//get specific item with itemId in a specific restraunt
-// export const selectItemByIdAndRestraunt = createSelector([selectItemsByRestrauntId, selectItemId], (itemList, itemId) => {
-//     return itemList.find( item => item.itemId === itemId)
-// }) 
-
-
 
 //export the reducer
 export default cartSlice.reducer
