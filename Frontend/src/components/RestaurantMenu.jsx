@@ -1,27 +1,45 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { mockData } from "../utils/mockData"; // Ensure mockData is an array
-import  { useDispatch } from 'react-redux';
-import { addToCart } from '../feature/cart/cartSlice';
+import  { useDispatch, useSelector } from 'react-redux';
+import { addToCart,selectItemsByRestrauntId } from '../feature/cart/cartSlice';
+import PlusMinusButton from "./PlusMinusButton"
+
 
 const MenuPage = () => {
   const { id } = useParams(); // Get the restaurant ID from the URL
   const dispatch = useDispatch()
   const restaurantId = parseInt(id, 10);
+  const restaurant = mockData.data.restaurants.find((res) => res.id === restaurantId);
+  //Fetch all items in CART for a specific restraunt
+  const cartItemList = useSelector(state => selectItemsByRestrauntId(state, restaurantId))
+
+  function cartItemQuantity( itemId ){
+    console.log("fetched item list",cartItemList)
+    const item = cartItemList.find( item => item.itemId === itemId)
+    if (item) return item.quantity
+    else return 0 
+  }
+  
 
   //function Add to cart
-  function handleAddToCart(e , cuisine){
+  function handleAddToCart(e , cuisine, itemId){
     e.preventDefault()
     const newProduct = {
-      id: cuisine.id,
-      name: cuisine.name,
-      price: cuisine.price
+      restrauntId: restaurantId,
+      itemId: itemId,
+      restrauntName: restaurant.name,
+      itemName: cuisine.name,
+      price: cuisine.price,
+      deliveryTime: restaurant.deliveryTime
     }
+    console.log(addToCart(newProduct))
    dispatch( addToCart(newProduct))
   }
 
+  
+
   // Find the restaurant data by ID
-  const restaurant = mockData.data.restaurants.find((res) => res.id === restaurantId);
 
   if (!restaurant) {
     return <p>Restaurant not found</p>;
@@ -42,9 +60,14 @@ const MenuPage = () => {
               <p className="font-medium">Price: ₹{cuisine.price}</p>
               <p className="text-gray-700">{cuisine.description}</p>
             </div>
-            <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600" onClick={e => handleAddToCart(e, cuisine)}>
+            {
+              cartItemQuantity(index) > 0 ? <PlusMinusButton/> : (
+            <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600" onClick={e => handleAddToCart(e, cuisine, index)}>
               Add
             </button>
+              )
+            }
+            
           </div>
         ))}
       </div>

@@ -1,35 +1,41 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSelector, createSlice } from "@reduxjs/toolkit";
 
-// const initialState = {
-//     items: [{
-//         id: 1,
-//         name: '',
-//         quantity: 0,
-//         price: 0
-//     },
-//     {
-//         id: 2,
-//         name: '',
-//         quantity: 0,
-//         price: 0
-//     }],
-//     totalPrice: 0,
-//     totalQuantity: 0    
-// }
+
+// Each item will contain below contents
+// itemId: 0,    
+// restrauntId : 0,
+// restrauntName: "test" , 
+// itemName: "foodBlog",
+// quantity:0,
+// price:0,
+// deliveryTime: 0,  //? 
+
+const cart = {
+    items :[],
+    totalPrice: 0,
+    totalQuantity: 0 ,  
+    totalDeliveryTime:0, //?
+}
 
 const cartSlice = createSlice({
     name: 'cart',
-    initialState:{},
+    initialState: cart,
     reducers:{
         addToCart : function( state, action){
-            const existingItem = state.items.find( item => item.id === action.payload.id)
+            console.log("state items", state)
+            //check if the item exists
+            const existingItem = state.items.find( item => {
+                if ( item.restrauntId === action.payload.restrauntId) return item.itemId === action.payload.itemId
+                return false
+            })
             if (existingItem){
                 existingItem.quantity++
             }else{
-                state.items.push({... action.payload, quantity: 1})
+                state.items.push({...action.payload, quantity: 1})
             }
             state.totalQuantity++
             state.totalPrice += action.payload.price
+            //? deliverytime
         },
         removeFromCart : function( state, action){
             const existingItemIndex = state.items.find( item => item.id === action.payload.id)
@@ -64,6 +70,32 @@ const cartSlice = createSlice({
 
 //export actions
 export const { addToCart, removeFromCart, updateItemQuantity, clearCart } = cartSlice.actions
+
+export const selectItems = state => state.items
+export const selectTotalPrice = state => state.totalPrice
+export const selectTotalQuantity = state => state.totalQuantity
+
+const selectRestrauntId = (state, restrauntId) => restrauntId
+const selectItemId = (state, itemId) => itemId
+
+//Filter Items by restraunt (memoized selector)
+export const selectItemsByRestrauntId = createSelector([selectItems, selectRestrauntId ], (items, restrauntId) => {
+    if (Array.isArray(items)){
+        const itemList = items.filter( item => item.restrauntId === restrauntId )
+        if (Array.isArray(itemList)) return itemList
+        else return []
+    }else{
+        return []
+    }
+    
+})
+
+//get specific item with itemId in a specific restraunt
+export const selectItemByIdAndRestraunt = createSelector([selectItemsByRestrauntId, selectItemId], (itemList, itemId) => {
+    return itemList.find( item => item.itemId === itemId)
+}) 
+
+
 
 //export the reducer
 export default cartSlice.reducer
