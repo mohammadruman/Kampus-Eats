@@ -8,9 +8,9 @@ import PlusMinusButton from "./PlusMinusButton"
 
 const MenuPage = () => {
   const { id } = useParams(); // Get the restaurant ID from the URL
-  const dispatch = useDispatch()
   const restaurantId = parseInt(id, 10);
   const restaurant = mockData.data.restaurants.find((res) => res.id === restaurantId);
+  const dispatch = useDispatch()
   //Fetch all items in CART for a specific restraunt
   const cartItemList = useSelector(state => selectItemListByRestrauntId(state, restaurantId))
 
