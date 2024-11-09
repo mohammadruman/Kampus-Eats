@@ -29,21 +29,6 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState: cart,
     reducers:{
-        // addToCart : function( state, action){
-        //     //check if the item exists
-        //     const existingItem = state.items.find( item => {
-        //         if ( item.restrauntId === action.payload.restrauntId) return item.itemId === action.payload.itemId
-        //         return false
-        //     })
-        //     if (existingItem){
-        //         existingItem.quantity++
-        //     }else{
-        //         state.items.push({...action.payload, quantity: 1})
-        //     }
-        //     state.totalQuantity++
-        //     state.totalPrice += action.payload.price
-        //     //? deliverytime
-        // },
         addToCart: function( state, action){
             //check if restraun exist
             const index = state.restrauntList.findIndex( res => res.resId === action.payload.resId)
@@ -82,21 +67,6 @@ const cartSlice = createSlice({
             state.totalPrice += action.payload.price
             //? deliveryTime
         },
-        // removeFromCart : function( state, action){
-        //     //check if the item exists
-        //     const existingItemIndex = state.items.findIndex( item => {
-        //         if ( item.restrauntId === action.payload.restrauntId) return item.itemId === action.payload.itemId
-        //         return false
-        //     })
-        //     if (existingItemIndex !== -1){
-        //         let existingItem = state.items[existingItemIndex]
-        //         if (existingItem.quantity > 1) existingItem.quantity -- 
-        //         //completely remove the item
-        //         else state.items.splice(existingItemIndex,1)
-        //         state.totalQuantity -= 1
-        //         state.totalPrice -= existingItem.price
-        //     }
-        // },
         removeFromCart : function (state, action){
             const restraunt = state.restrauntList.find( res => res.resId === action.payload.resId)
             const existingItem = restraunt.items( item => item.itemId === action.payload.itemId)
@@ -117,6 +87,7 @@ export const selectItems = state => state.cart.items
 export const selectTotalPrice = state => state.cart.totalPrice
 export const selectTotalQuantity = state => state.cart.totalQuantity
 export const selectRestrauntList = state => state.cart.restrauntList
+export const selectAllCart = state => state.cart
 
 const selectRestrauntId = (state, restrauntId) => restrauntId
 
