@@ -17,8 +17,7 @@ const MenuPage = () => {
 
   function cartItemQuantity( itemId ){
     const item = cartItemList.find( item => item.itemId === itemId)
-    if (item) return item.quantity
-    else return 0 
+    return item?.quantity ?? 0
   }
   
 
@@ -26,20 +25,19 @@ const MenuPage = () => {
   function handleAddToCart(e , cuisine, itemId){
     e.preventDefault()
     const newProduct = {
-      restrauntId: restaurantId,
+      resId: restaurantId,
       itemId: itemId,
-      restrauntName: restaurant.name,
+      resName: restaurant.name,
       itemName: cuisine.name,
       price: cuisine.price,
-      deliveryTime: restaurant.deliveryTime
     }
    dispatch( addToCart(newProduct))
   }
 
   //handle remove from cart
-  function handleRemoveFromCart(e, restrauntId, itemId){
+  function handleRemoveFromCart(e, resId, itemId){
     e.preventDefault()
-    dispatch(removeFromCart({restrauntId, itemId}))
+    dispatch(removeFromCart({resId, itemId}))
   }
 
   
