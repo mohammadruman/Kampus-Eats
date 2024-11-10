@@ -8,7 +8,7 @@ const Cart = () => {
   function tileList(){
     const restrauntList = cart.restrauntList
     return restrauntList.map( restraunt => {
-       return <CartTile restraunt={restraunt} />
+       return <CartTile key={`${restraunt.resId}`} restraunt={restraunt} />
     } )
   }
   return (

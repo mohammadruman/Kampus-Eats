@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { mockData } from "../utils/mockData"; // Ensure mockData is an array
 import  { useDispatch, useSelector } from 'react-redux';
-import { addToCart , removeFromCart, selectItemListByRestrauntId} from '../feature/cart/cartSlice';
+import { addItemToCart , selectItemListByRestrauntId} from '../feature/cart/cartSlice';
 import PlusMinusButton from "./PlusMinusButton"
 
 
@@ -21,7 +21,7 @@ const MenuPage = () => {
   }
   
 
-  //function Add to cart
+  //function adds new item to cart
   function handleAddToCart(e , cuisine, itemId){
     e.preventDefault()
     const newProduct = {
@@ -31,13 +31,7 @@ const MenuPage = () => {
       itemName: cuisine.name,
       price: cuisine.price,
     }
-   dispatch( addToCart(newProduct))
-  }
-
-  //handle remove from cart
-  function handleRemoveFromCart(e, resId, itemId){
-    e.preventDefault()
-    dispatch(removeFromCart({resId, itemId}))
+   dispatch( addItemToCart(newProduct))
   }
 
   
@@ -81,12 +75,9 @@ const MenuPage = () => {
               {
               cartItemQuantity(index) > 0 ? 
               <PlusMinusButton 
-                cuisine={cuisine}
-                restaurantId={restaurantId}
-                index={index}
-                addFn={e => handleAddToCart(e, cuisine, index)} 
-                removeFn={e => handleRemoveFromCart(e,restaurantId, index)} 
-                value={cartItemQuantity(index)}
+                resId={restaurantId}
+                itemId={index}
+                quantity={cartItemQuantity(index)}
               /> : (
             <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600" onClick={e => handleAddToCart(e, cuisine, index)}>
                 Add
