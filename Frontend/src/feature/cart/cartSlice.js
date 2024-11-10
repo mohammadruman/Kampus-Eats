@@ -29,10 +29,12 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState: cart,
     reducers:{
-        addToCart: function( state, action){
+        //adds new item to the cart
+        addItemToCart: function( state, action){
             //check if restraun exist
             const index = state.restrauntList.findIndex( res => res.resId === action.payload.resId)
             if(index === -1){
+                // first add restraun to cart list
                 const restraunt = {
                     resId : action.payload.resId,
                     resName: action.payload.resName,
@@ -48,9 +50,8 @@ const cartSlice = createSlice({
                 restraunt.items.push(item)
                 state.restrauntList.push(restraunt)
             }else{
+                // add item to the restraun items list
                 const restraunt = state.restrauntList[index]
-                const itemIndex = restraunt.items.findIndex( item => item.itemId === action.payload.itemId )
-                if(itemIndex === -1){
                     const item = {
                         itemId : action.payload.itemId,
                         itemName: action.payload.itemName,
@@ -58,15 +59,21 @@ const cartSlice = createSlice({
                         quantity: 1
                     }
                     restraunt.items.push( item )
-                }else{
-                    restraunt.items[index].quantity++
-                }
             }
 
             state.totalQuantity++
             state.totalPrice += action.payload.price
             //? deliveryTime
         },
+        //increases quantity of existing item by 1
+        addItemQuantity: function(state, action){
+            const restraunt = state.restrauntList.find( res => res.resId === action.payload.resId)
+            const existingItem = restraunt.items( item => item.itemId === action.payload.itemId)
+            existingItem.quantity ++
+            state.totalQuantity += 1
+            state.totalPrice += existingItem.price
+        },
+        //deccreases quantity of existing item by 1
         removeFromCart : function (state, action){
             const restraunt = state.restrauntList.find( res => res.resId === action.payload.resId)
             const existingItem = restraunt.items( item => item.itemId === action.payload.itemId)
@@ -74,8 +81,9 @@ const cartSlice = createSlice({
             state.totalQuantity -= 1
             state.totalPrice -= existingItem.price
         },
+        //empty the cart completely
         clearCart : function( state){
-            state.items = []
+            state.restrauntList = []
         }
     }
 })

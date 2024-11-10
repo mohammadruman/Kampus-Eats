@@ -8,11 +8,11 @@ const Cart = () => {
   function tileList(){
     const restrauntList = cart.restrauntList
     return restrauntList.map( restraunt => {
-       return <CartTile resName={restraunt.resName} />
+       return <CartTile restraunt={restraunt} />
     } )
   }
   return (
-    <div>
+    <div className='flex items-center flex-col'>
       {
         tileList()
       }
