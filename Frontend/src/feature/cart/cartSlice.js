@@ -86,7 +86,7 @@ const cartSlice = createSlice({
                 restraunt.items[existingItemIndex].quantity --
             }
             //if no items remain in the cart, remvoe teh restraunt from restraunt list
-            if (restraunt.items.length === 0 ){
+            if (restraunt.items.length === 0){
                 const index = state.restrauntList.findIndex( res => res.resId === restraunt.resId)
                 state.restrauntList.splice( index, 1)
             }
