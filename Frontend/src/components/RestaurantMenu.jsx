@@ -38,11 +38,11 @@ const MenuPage = () => {
       <div className="space-y-4 w-10/12 mx-auto">
         {filteredCuisines.length > 0 ? (
           filteredCuisines.map((cuisine, index) => (
-            <div key={index} className="flex items-center justify-between p-4 bg-gray-100 rounded-lg shadow-md ">
+            <div key={index} className="flex items-center justify-between p-4 bg-gray-100 rounded-lg shadow-md">
               <div className="flex flex-col flex-grow">
                 <h5 className="font-bold text-lg">{cuisine.name}</h5>
                 <p className="font-medium">Price: ₹{cuisine.price}</p>
-                <p className="text-gray-700 italic md:italic sm:italic">{cuisine.description}</p>
+                <p className="text-gray-700">{cuisine.description}</p>
               </div>
               <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
                 Add
