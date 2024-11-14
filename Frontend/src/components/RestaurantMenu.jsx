@@ -43,7 +43,7 @@ const MenuPage = () => {
 
   return (
     <div>
-      <h1>{restaurant.name}</h1>
+      <h1 className='text-lg font-bold py-3'>{restaurant.name}</h1>
       <input
         type="text"
         placeholder="Search cuisines..."
@@ -60,8 +60,9 @@ const MenuPage = () => {
                 <p className="font-medium">Price: ₹{cuisine.price}</p>
                 <p className="text-gray-700">{cuisine.description}</p>
               </div>
+              <div className="flex justify-center items-center mt-4">
               {cartItemQuantity(index) > 0 ? (
-                <PlusMinusButton
+                <PlusMinusButton 
                   resId={restaurantId}
                   itemId={index}
                   quantity={cartItemQuantity(index)}
@@ -74,6 +75,7 @@ const MenuPage = () => {
                   Add
                 </button>
               )}
+              </div>
             </div>
           ))
         ) : (
