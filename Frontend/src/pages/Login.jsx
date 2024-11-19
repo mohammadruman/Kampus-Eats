@@ -21,6 +21,14 @@ const Login = () => {
 		const userInfo = { email, password }
 		login(userInfo)
 	}
+
+	const handleDemoAccount = () => {
+		const email = 'dave@gmail.com'
+		const password = 'abcdabcd'
+		const userInfo = { email, password }
+		login(userInfo)
+	}
+
 	return (
 		<>
 			<form ref={loginForm} onSubmit={handleFormSubmit}>
@@ -51,6 +59,7 @@ const Login = () => {
 							</p>
 						</div>
 					</div>
+					<div onClick={handleDemoAccount} className="cursor-pointer h-[20vh] w-[15vh] bg-slate-500 flex items-center rounded-lg bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold shadow-md hover:from-blue-600 hover:to-green-600 transform hover:scale-105 transition-all duration-200 ease-in-out ml-4">Use demo account</div>
 				</div>
 			</form>
 			{/* <Footer /> */}
