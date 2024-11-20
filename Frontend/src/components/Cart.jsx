@@ -49,7 +49,6 @@ const Cart = () => {
 					</div>
 					<button
 						className="px-6 py-2 bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-green-600 transform hover:scale-105 transition-all duration-200 ease-in-out"
-						// onClick={() => alert("Proceeding to checkout...")}
 						onClick={makepayment}>
 						Order Now
 					</button>

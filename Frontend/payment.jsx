@@ -14,17 +14,18 @@ export default async ({ req, res, log, error }) => {
 
 	if (req.method === 'POST') {
 		try {
-			const { amount, currency = 'inr' } = JSON.parse(req.body)
+			// const { amount, currency = 'inr' } = JSON.parse(req.body)
 
-			const paymentIntent = await stripe.paymentIntents.create({
-				amount: Math.round(amount * 100), // Convert to paise/cents
-				currency,
-				payment_method_types: ['card'],
-			})
+			// const paymentIntent = await stripe.paymentIntents.create({
+			// 	amount: Math.round(amount * 100), // Convert to paise/cents
+			// 	currency,
+			// 	payment_method_types: ['card'],
+			// })
 
-			console.log('paymentIntent', paymentIntent)
+			// console.log('paymentIntent', paymentIntent)
 
-			return res.json({ clientSecret: paymentIntent.client_secret }, 200, corsHeaders)
+			// return res.json({ clientSecret: paymentIntent.client_secret }, 200, corsHeaders)
+			return res.json('', 200, corsHeaders)
 		} catch (error) {
 			return res.json({ error: error.message }, 500, corsHeaders)
 		}
