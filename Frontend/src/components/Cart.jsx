@@ -24,7 +24,7 @@ const Cart = () => {
 
 	const testAppwriteFunction = async () => {
 		const result = await fetch(
-			'https://673dcd3054a038fbb6b5.appwrite.global/',
+			'https://673e2f926861654d92cb.appwrite.global/',
 			{ headers: { 'Content-Type': 'application/json' } }
 		)
 		console.log(result)
