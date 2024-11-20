@@ -14,15 +14,22 @@ const Header = () => {
 						</h1>
 					</Link>
 					<div className="flex space-x-6 items-center">
-						<Link to="/menu" className="text-black hover:text-blue-600">
-							Menu
-						</Link>
-						<Link to="/orders" className="text-black hover:text-blue-600">
-							My Orders
-						</Link>
-						<Link to="/cart" className="text-black hover:text-blue-600">
-							🛒
-						</Link>
+						{user ? (
+							<>
+								<Link
+									to="/foodcourt"
+									className="text-black hover:text-blue-600">
+									Menu
+								</Link>
+								<Link to="/orders" className="text-black hover:text-blue-600">
+									My Orders
+								</Link>
+								<Link to="/cart" className="text-black hover:text-blue-600">
+									🛒
+								</Link>
+							</>
+						) : null}
+
 						{user ? (
 							<button onClick={logout}>Logout</button>
 						) : (
