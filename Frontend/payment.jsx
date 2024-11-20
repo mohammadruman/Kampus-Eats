@@ -5,13 +5,17 @@ const stripe = new Stripe(
 )
 
 export default async ({ req, res, log, error }) => {
-	const corsHeaders = {
-		'Access-Control-Allow-Origin': 'http://localhost:3000',
-		'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-		'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-	}
+	// const corsHeaders = {
+	// 	'Access-Control-Allow-Origin': 'http://localhost:3000',
+	// 	'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+	// 	'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+	// }
 	if (req.method === 'OPTIONS' || req.method === 'GET') {
-		return res.send('', 200, corsHeaders)
+		return res.send('', 200, {
+			'Access-Control-Allow-Origin': 'http://localhost:3000',
+			'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+			'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+		})
 	}
 
 	if (req.method === 'POST') {
@@ -26,13 +30,17 @@ export default async ({ req, res, log, error }) => {
 
 			console.log('paymentIntent', paymentIntent)
 
-			return res.json(
-				{ clientSecret: paymentIntent.client_secret },
-				200,
-				corsHeaders
-			)
+			return res.json({ clientSecret: paymentIntent.client_secret }, 200, {
+				'Access-Control-Allow-Origin': 'http://localhost:3000',
+				'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+				'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+			})
 		} catch (error) {
-			return res.json({ error: error.message }, 500, corsHeaders)
+			return res.json({ error: error.message }, 500, {
+				'Access-Control-Allow-Origin': 'http://localhost:3000',
+				'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+				'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+			})
 		}
 	}
 
