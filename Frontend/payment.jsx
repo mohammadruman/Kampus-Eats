@@ -10,7 +10,7 @@ export default async ({ req, res, log, error }) => {
 		'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
 		'Access-Control-Allow-Headers': 'Content-Type, Authorization',
 	}
-	if (req.method === 'OPTIONS') {
+	if (req.method === 'OPTIONS' || req.method === 'GET') {
 		return res.send('', 200, corsHeaders)
 	}
 
