@@ -6,7 +6,7 @@ import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import PaymentForm from './PaymentForm'
 
-const stripePromise = loadStripe('pk_test_51P9M6fSG75cgTzAowwJHSac0Eq5fQSPNg11Sb7XGF6qWiLtCjn5MeY705DXbGr2udA1KFEq1iN2aQzy0jzu0Mbsb00ywBojOXI')
+const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY)
 
 const Cart = () => {
 	const cart = useSelector(selectAllCart)
