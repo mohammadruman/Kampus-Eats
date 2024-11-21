@@ -11,6 +11,8 @@ import RestaurantMenu from './components/RestaurantMenu'
 import { AuthProvider } from './utils/AuthContext'
 import PrivateRoutes from './utils/PrivateRoutes'
 import Cart from './components/Cart'
+import PaymentSuccess from './components/PaymentSuccess'
+import StripePayment from './components/StripePayment'
 
 function App() {
 	return (
@@ -27,6 +29,8 @@ function App() {
 							<Route path="/cart" element={<Cart />} />
 							<Route path="/foodcourt/menu" element={<MenuPage />} />
 							<Route path="/restaurant-menu/:id" element={<RestaurantMenu />} />
+							<Route path="/payment" element={<StripePayment />} />
+							<Route path="/success" element={<PaymentSuccess />} />
 						</Route>
 					</Routes>
 					<Footer />
