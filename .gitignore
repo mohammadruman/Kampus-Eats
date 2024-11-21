@@ -6,6 +6,8 @@ vite-project
 /.pnp
 .pnp.js
 
+.env
+
 # testing
 /coverage
 
