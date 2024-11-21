@@ -1,11 +1,7 @@
 import { useState } from 'react'
-import { loadStripe } from '@stripe/stripe-js'
-import {
-	Elements,
-	PaymentElement,
-	useStripe,
-	useElements,
-} from '@stripe/react-stripe-js'
+import { PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js'
+
+const PAYMENT_SUCESS_URL = 'http://localhost:3000/success'
 
 export default function PaymentForm({ amount }) {
 	const stripe = useStripe()
@@ -22,64 +18,54 @@ export default function PaymentForm({ amount }) {
 
 		setProcessing(true)
 
-		const { error: submitError } = await elements.submit()
-		if (submitError) {
-			setError(submitError.message)
-			setProcessing(false)
-			return
-		}
 
-		// Create payment intent on your Appwrite function
-		const response = await fetch(
-			'https://673e2f926861654d92cb.appwrite.global/',
-			{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					amount: amount,
-					currency: 'inr',
-				}),
-			}
-		)
-
-    console.log('response: ', response)
-
-		const { clientSecret, error: paymentError } = await response.json()
-
-		if (paymentError) {
-			setError(paymentError)
-			setProcessing(false)
-			return
-		}
-
-		// Confirm the payment
-		const { error: confirmError } = await stripe.confirmPayment({
+		const res = await stripe.confirmPayment({
 			elements,
-			clientSecret,
 			confirmParams: {
-				return_url: `${window.location.origin}/payment-success`,
+				return_url: PAYMENT_SUCESS_URL,
 			},
 		})
 
-		if (confirmError) {
-			setError(confirmError.message)
+		if (res.error) {
+			setError(res.error.message)
 		}
 
 		setProcessing(false)
 	}
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<PaymentElement />
-			{error && <div className="text-red-500">{error}</div>}
-			<button
-				type="submit"
-				disabled={!stripe || processing}
-				className="mt-4 bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-300">
-				{processing ? 'Processing...' : 'Pay Now'}
-			</button>
-		</form>
+		<>
+			<div className="p-6 flex flex-col items-center">
+				<h2 className="font-bold pb-5 ">Use these sample card details.</h2>
+				<table className="table-fixed w-[30%] flex flex-col gap-2">
+					<tr className="flex justify-between">
+						<td>Card Number</td>
+						<td>4242 4242 4242 4242</td>
+					</tr>
+					<tr className="flex justify-between">
+						<td>Expiration Date</td>
+						<td>10/32</td>
+					</tr>
+					<tr className="flex justify-between">
+						<td>Security code:</td>
+						<td>567</td>
+					</tr>
+				</table>
+			</div>
+			<form onSubmit={handleSubmit}>
+				<div className="flex justify-center">
+					<div className="p-8 m-2 w-[60%] ">
+						<PaymentElement />
+					</div>
+				</div>
+				{error && <div className="text-red-500">{error}</div>}
+				<button
+					type="submit"
+					disabled={!stripe || processing}
+					className="mt-4 bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-300">
+					{processing ? 'Processing...' : 'Pay Now'}
+				</button>
+			</form>
+		</>
 	)
 }

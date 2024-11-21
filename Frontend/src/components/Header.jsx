@@ -4,7 +4,6 @@ import { useAuth } from '../utils/AuthContext'
 
 const Header = () => {
 	const { user, logout } = useAuth()
-	console.log("user", user.$id)
 	return (
 		<nav className="bg-white shadow-md">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

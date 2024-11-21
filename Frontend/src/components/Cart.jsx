@@ -1,16 +1,14 @@
-import {React, useState} from 'react'
+import { React, useState } from 'react'
 import CartTile from './CartTile'
 import { useSelector } from 'react-redux'
 import { selectAllCart } from '../feature/cart/cartSlice'
-import { Elements } from '@stripe/react-stripe-js'
-import { loadStripe } from '@stripe/stripe-js'
-import PaymentForm from './PaymentForm'
+import { useNavigate } from 'react-router-dom'
 
-const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY)
+
 
 const Cart = () => {
 	const cart = useSelector(selectAllCart)
-	const [clientSecret, setClientSecret] = useState(null)
+	const navigate = useNavigate()
 
 	function tileList() {
 		const restrauntList = cart.restrauntList
@@ -20,11 +18,7 @@ const Cart = () => {
 	}
 
 	const makepayment = async () => {
-		const result = await fetch(
-			'https://673e2f926861654d92cb.appwrite.global/',
-			{ headers: { 'Content-Type': 'application/json' } }
-		)
-		console.log(result)
+		navigate('/payment')
 	}
 
 	return (
@@ -52,15 +46,6 @@ const Cart = () => {
 						onClick={makepayment}>
 						Order Now
 					</button>
-					<Elements
-						stripe={stripePromise}
-						options={{
-							mode: 'payment',
-							amount: cart.totalPrice * 100,
-							currency: 'inr',
-						}}>
-						<PaymentForm amount={cart.totalPrice} />
-					</Elements>
 				</div>
 			</div>
 		</div>
