@@ -8,6 +8,7 @@ export default function PaymentForm({ amount }) {
 	const elements = useElements()
 	const [error, setError] = useState(null)
 	const [processing, setProcessing] = useState(false)
+	const [isModalOpen, setIsModalOpen] = useState(false) // To control modal visibility
 
 	const handleSubmit = async (event) => {
 		event.preventDefault()
@@ -17,7 +18,6 @@ export default function PaymentForm({ amount }) {
 		}
 
 		setProcessing(true)
-
 
 		const res = await stripe.confirmPayment({
 			elements,
@@ -33,32 +33,59 @@ export default function PaymentForm({ amount }) {
 		setProcessing(false)
 	}
 
+	// Toggle modal visibility
+	const toggleModal = () => {
+		setIsModalOpen(!isModalOpen)
+	}
+
 	return (
 		<>
-			<div className="p-6 flex flex-col items-center">
-				<h2 className="font-bold pb-5 ">Use these sample card details.</h2>
-				<table className="table-fixed w-[30%] flex flex-col gap-2">
-					<tr className="flex justify-between">
-						<td>Card Number</td>
-						<td>4242 4242 4242 4242</td>
-					</tr>
-					<tr className="flex justify-between">
-						<td>Expiration Date</td>
-						<td>10/32</td>
-					</tr>
-					<tr className="flex justify-between">
-						<td>Security code:</td>
-						<td>567</td>
-					</tr>
-				</table>
-			</div>
-			<form onSubmit={handleSubmit}>
+			{/* Payment Form */}
+			<form onSubmit={handleSubmit} className="p-4">
+				<div className="text-center mb-4">
+					<button
+						type="button"
+						onClick={toggleModal}
+						className="text-blue-500 hover:text-blue-700 mt-2">
+						See Card Details
+					</button>
+				</div>
+				{/* Modal - Card Details */}
+				{isModalOpen && (
+					<div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+						<div className="bg-white p-6 rounded-lg shadow-lg w-[300px]">
+							<h4 className="text-xl font-semibold">Sample Card Details</h4>
+							<table className="table-fixed w-full mt-4">
+								<tr className="border-b py-2">
+									<td className="font-medium">Card Number</td>
+									<td>4242 4242 4242 4242</td>
+								</tr>
+								<tr className="border-b py-2">
+									<td className="font-medium">Expiration Date</td>
+									<td>10/32</td>
+								</tr>
+								<tr className="py-2">
+									<td className="font-medium">Security Code</td>
+									<td>567</td>
+								</tr>
+							</table>
+							<button
+								onClick={toggleModal}
+								className="mt-4 bg-red-500 text-white px-4 py-2 rounded w-full">
+								Close
+							</button>
+						</div>
+					</div>
+				)}
+				{/* Stripe Payment Element */}
 				<div className="flex justify-center">
-					<div className="p-8 m-2 w-[60%] ">
+					<div className="p-8 m-2 w-[60%]">
 						<PaymentElement />
 					</div>
 				</div>
+				{/* Error Display */}
 				{error && <div className="text-red-500">{error}</div>}
+				{/* Submit Button */}
 				<button
 					type="submit"
 					disabled={!stripe || processing}
