@@ -1,23 +1,40 @@
 //server.js
-require('dotenv').config()
+// import { connectDB } from './config/db'
+import 'dotenv/config'
+import mongoose from 'mongoose'
+import express from 'express'
+import cors from 'cors'
+import bodyParser from 'body-parser'
+import Stripe from 'stripe'
+import Payment from './models/payment.js'
 
-const express = require('express')
-const cors = require('cors')
-const bodyParser = require('body-parser')
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+const stripe = new Stripe(
+	'sk_test_51P9M6fSG75cgTzAoH9wndoVN0XVMmXNXTrzOdyVwpGNiQUX6T1OKuH0kdD0ID3rwBhIk2n2NOZbqBuIDXCucbp6O00JGydyKHV'
+)
 
 const app = express()
 const PORT = process.env.PORT || 4000
 
+const MONGO_URI =
+	'mongodb+srv://pratishthadevs:ckrnEfegV5zAMcTz@cluster0.p7amb.mongodb.net/KampusEats?retryWrites=true&w=majority&appName=Cluster0'
+const connectDB = async () => {
+	try {
+		await mongoose.connect(MONGO_URI)
+		console.log('MongoDB connected')
+	} catch (error) {
+		console.error('Error connecting to MongoDB:', error.message)
+		process.exit(1)
+	}
+}
+
+connectDB()
 app.use(cors())
 app.use(bodyParser.json())
 
-const calculateTotalOrderAmount = (items) => {
-	return items[0].amount * 100
-}
-
 app.post('/create-payment-intent', async (req, res) => {
-	const { name, amount } = req.body
+	const { name, amount, email } = req.body
+
+	const orderid = Math.floor(1000 + Math.random() * 9000)
 
 	const paymentIntent = await stripe.paymentIntents.create({
 		amount: amount,
@@ -39,11 +56,25 @@ app.post('/create-payment-intent', async (req, res) => {
 		},
 	})
 
+	const clientsecret = paymentIntent.client_secret
+	// Save payment details to MongoDB
+	const pay = new Payment({
+		email,
+		name,
+		amount,
+		clientsecret,
+		orderid,
+	})
+	await pay.save()
+
+	console.log('pay:', pay)
+
 	res.send({
 		clientSecret: paymentIntent.client_secret,
 	})
 })
 
-app.listen(PORT, () => {
-	console.log(`Server started on PORT ${PORT}`)
+mongoose.connection.once('open', () => {
+	console.log('Connected to MongoDB')
+	app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
 })
