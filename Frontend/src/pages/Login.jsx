@@ -52,14 +52,21 @@ const Login = () => {
 						<button className="w-full px-4 py-4 text-lg font-bold text-white bg-black rounded-lg hover:bg-gray-500 hover:text-black ">
 							Log in
 						</button>
-						<div className="flex justify-center items-center space-x-3">
-							<p>New here?</p>
-							<p className="text-gray-500 hover:text-black">
-								<Link to="/register">Register</Link>
+						<div className="flex justify-between items-center w-full">
+							<div className="flex items-center space-x-3">
+								<p>New here?</p>
+								<p className="text-gray-500 hover:text-black">
+									<Link to="/register">Register</Link>
+								</p>
+							</div>
+							<p
+								onClick={handleDemoAccount}
+								className="text-gray-500 hover:text-black cursor-pointer"
+							>
+								Use demo account
 							</p>
 						</div>
 					</div>
-					<div onClick={handleDemoAccount} className="cursor-pointer h-[20vh] w-[15vh] bg-slate-500 flex items-center rounded-lg bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold shadow-md hover:from-blue-600 hover:to-green-600 transform hover:scale-105 transition-all duration-200 ease-in-out ml-4">Use demo account</div>
 				</div>
 			</form>
 			{/* <Footer /> */}
