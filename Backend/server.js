@@ -12,6 +12,7 @@ const stripe = new Stripe(
 	'sk_test_51P9M6fSG75cgTzAoH9wndoVN0XVMmXNXTrzOdyVwpGNiQUX6T1OKuH0kdD0ID3rwBhIk2n2NOZbqBuIDXCucbp6O00JGydyKHV'
 )
 
+
 const app = express()
 const PORT = process.env.PORT || 4000
 
@@ -28,30 +29,14 @@ const connectDB = async () => {
 }
 
 connectDB()
-app.use(cors())
+app.use(cors({
+	origin: ['https://deploy-mern-1whq.vercel.app'], // Allow requests from this specific origin
+	methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods
+	allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
+	credentials: true, // Allow cookies and authentication headers to be sent
+  }));
 app.use(bodyParser.json())
 
-//testing data entry in db
-// const addPayment = async () => {
-//     try {
-//         await connectDB(); // Ensure DB connection is established
-
-//         const newPayment = new Payment({
-//             email: 'test@example.com',
-//             name: 'John Doe',
-//             amount: 5000,
-//             clientsecret: 'secret123',
-//             orderid: 'ORD001',
-// 			date:'11/11/2024'
-//         });
-
-//         await newPayment.save();
-//         console.log('Payment record inserted successfully!');
-//     } catch (error) {
-//         console.error('Error inserting payment:', error.message);
-//     }
-// };
-// addPayment();
 
 app.post('/create-payment-intent', async (req, res) => {
 	const { name, amount, email } = req.body
