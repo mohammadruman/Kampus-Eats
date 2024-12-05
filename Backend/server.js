@@ -16,7 +16,7 @@ const app = express()
 const PORT = process.env.PORT || 4000
 
 const MONGO_URI =
-	'mongodb+srv://pratishthadevs:ckrnEfegV5zAMcTz@cluster0.p7amb.mongodb.net/KampusEats?retryWrites=true&w=majority&appName=Cluster0'
+	'mongodb+srv://mohammaderuman:foWYRU8fVoZw5Hbj@cluster0.jwg27.mongodb.net/paymentdb?retryWrites=true&w=majority'
 const connectDB = async () => {
 	try {
 		await mongoose.connect(MONGO_URI)
@@ -30,6 +30,28 @@ const connectDB = async () => {
 connectDB()
 app.use(cors())
 app.use(bodyParser.json())
+
+//testing data entry in db
+// const addPayment = async () => {
+//     try {
+//         await connectDB(); // Ensure DB connection is established
+
+//         const newPayment = new Payment({
+//             email: 'test@example.com',
+//             name: 'John Doe',
+//             amount: 5000,
+//             clientsecret: 'secret123',
+//             orderid: 'ORD001',
+// 			date:'11/11/2024'
+//         });
+
+//         await newPayment.save();
+//         console.log('Payment record inserted successfully!');
+//     } catch (error) {
+//         console.error('Error inserting payment:', error.message);
+//     }
+// };
+// addPayment();
 
 app.post('/create-payment-intent', async (req, res) => {
 	const { name, amount, email } = req.body

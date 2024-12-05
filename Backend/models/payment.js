@@ -27,4 +27,4 @@ const PaymentSchema = new mongoose.Schema({
 	},
 })
 
-export default mongoose.model('Payment', PaymentSchema)
+export default mongoose.model('payment', PaymentSchema, 'orderdetails')

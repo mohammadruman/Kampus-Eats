@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
-const MONGO_URI = 'mongodb+srv://pratishtharichu:MongoDBpswd@cluster0.p4tro.mongodb.net/Payment?retryWrites=true&w=majority&appName=Cluster0';
+const MONGO_URI = 'mongodb+srv://mohammaderuman:foWYRU8fVoZw5Hbj@cluster0.jwg27.mongodb.net/paymentdb?retryWrites=true&w=majority';
+
+mongoose.set("debug", true);
 
 const connectDB = async () => {
 	try {
@@ -14,4 +16,5 @@ const connectDB = async () => {
 	}
 };
 
-export default connectDB;
+
+export default connectDB;
