@@ -2,20 +2,16 @@
 ---
 
 # Kampus-Eats 🍴  
-A comprehensive **campus food court management system** that streamlines food ordering and enhances the dining experience for students and staff. The project offers a user-friendly interface for customers and powerful administrative tools for efficient order and menu management.
+A comprehensive **campus food court management system For Kiit University** that streamlines food ordering and enhances the dining experience for students and staff. The project offers a user-friendly interface for customers and powerful administrative tools for efficient order and menu management.
 
 ---
 
 ## 📌 Features
 ### User Panel
 - View menu items, categorized by meals (e.g., breakfast, lunch, extras).
-- Place orders seamlessly with a straightforward interface.
+- Place Pre orders seamlessly with a straightforward interface.
 - Responsive design for accessibility across devices.
 
-### Admin Panel
-- Add, update, and delete menu items efficiently.
-- Manage orders and track order history.
-- Secure login for administrators to ensure data privacy.
 
 ### Additional Highlights
 - Clean and minimalistic UI for a smooth user experience.
@@ -24,48 +20,10 @@ A comprehensive **campus food court management system** that streamlines food or
 ---
 
 ## 🛠️ Technologies Used
-- **Frontend**: HTML, CSS, JavaScript
+- **Frontend**: HTML, CSS, JavaScript ,Reactjs
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
-- **Other Tools**: Git, Postman for API testing
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-Make sure you have the following installed:
-- [Node.js](https://nodejs.org/)
-- [MongoDB](https://www.mongodb.com/try/download/community)
-- A code editor like [VS Code](https://code.visualstudio.com/)
-
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/jatinnayak47/Kampus-Eats.git
-   cd Kampus-Eats
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Configure environment variables:
-   - Create a `.env` file in the root directory.
-   - Add the following variables:
-     ```
-     PORT=5000
-     MONGO_URI=your-mongodb-connection-string
-     ```
-
-4. Start the development server:
-   ```bash
-   npm start
-   ```
-
-5. Open the application in your browser:
-   ```
-   http://localhost:5000
-   ```
+- **Other Tools**: Git, Postman for API testing , Appwrite
 
 ---
 
@@ -96,6 +54,45 @@ Make sure you have the following installed:
 **Payment**
 <img width="958" alt="image" src="https://github.com/user-attachments/assets/2c4cd476-4c39-405c-9a4c-db26d7165221" />
 
+
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/)
+- [MongoDB](https://www.mongodb.com/try/download/community)
+- A code editor like [VS Code](https://code.visualstudio.com/)
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/jatinnayak47/Kampus-Eats.git
+   cd Kampus-Eats
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Configure environment variables:
+   - Create a `.env` file in the root directory.
+   - Add the following variables:
+     ```
+     PORT=3000
+     MONGO_URI=your-mongodb-connection-string
+     ```
+
+4. Start the development server:
+   ```bash
+   npm start
+   ```
+
+5. Open the application in your browser:
+   ```
+   http://localhost:3000
+   ```
 
 
 ---
