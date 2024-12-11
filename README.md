@@ -128,7 +128,8 @@ Special thanks to contributors and testers who helped make Kampus-Eats a success
 
 ## 📬 Contributors  
 **Mohammad Ruman**  
-- [GitHub](https://github.com/mohammadruman)  
+- [GitHub](https://github.com/mohammadruman)
+  
 **Jatin Nayak**  
 - [GitHub](https://github.com/jatinnayak47)  
 
