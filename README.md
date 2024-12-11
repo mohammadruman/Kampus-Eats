@@ -69,30 +69,34 @@ Make sure you have the following installed:
 
 ---
 
-## 📂 Folder Structure
-```
-Kampus-Eats/
-│
-├── public/               # Frontend assets (CSS, JS, images)
-├── routes/               # API routes for user and admin functionalities
-├── models/               # Mongoose schemas for database
-├── controllers/          # Application logic and middleware
-├── views/                # Dynamic templates for rendering (if applicable)
-├── .env                  # Environment variables
-├── package.json          # Project configuration and dependencies
-└── server.js             # Main entry point
-```
-
----
 
 ## 🖼️ Screenshots
-*(Replace placeholders with real screenshots)*
 
-**User Panel**  
-![User Panel Screenshot](https://via.placeholder.com/800x400)  
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/8a15deb5-f4d9-4de6-9939-a3c7db1e53a4" />
+ 
+**Login Panel**  
+<img width="958" alt="image" src="https://github.com/user-attachments/assets/e3fab620-46db-412d-a1ab-0c36acac0ae0" />
 
-**Admin Panel**  
-![Admin Panel Screenshot](https://via.placeholder.com/800x400)  
+**Food Court**  
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/75f6ce20-e8d1-4207-b2ee-88a3e96aa187" />
+
+**Search Features**  
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/e091e300-43b7-408d-8a74-ace149cd65bb" />
+
+**Menu**
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/4e117416-334d-4f26-9266-9e62d40e4596" />
+
+**Cart**
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/b3b8e950-a462-493c-b15e-be2bdaeb7c92" />
+
+**Payment**
+<img width="958" alt="image" src="https://github.com/user-attachments/assets/2c4cd476-4c39-405c-9a4c-db26d7165221" />
+
+
 
 ---
 
@@ -116,12 +120,7 @@ We welcome contributions to improve Kampus-Eats!
 
 ---
 
-## 📜 License
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
----
-
-## 🌟 Acknowledgments
 Special thanks to contributors and testers who helped make Kampus-Eats a success!
 
 ---
