@@ -1,16 +1,18 @@
-import './App.css';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Home from './components/Home';
+import './App.css'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Home from './components/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import Foodcourt from './components/Foodcourt'; // Import your other components
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import router components
-import MenuPage from './pages/MenuPage';
-import RestaurantMenu from './components/RestaurantMenu';
-import { AuthProvider } from './utils/AuthContext';
-import PrivateRoutes from './utils/PrivateRoutes';
-import Cart from './components/Cart';
+import Foodcourt from './components/Foodcourt' // Import your other components
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom' // Import router components
+import MenuPage from './pages/MenuPage'
+import RestaurantMenu from './components/RestaurantMenu'
+import { AuthProvider } from './utils/AuthContext'
+import PrivateRoutes from './utils/PrivateRoutes'
+import Cart from './components/Cart'
+import PaymentSuccess from './components/PaymentSuccess'
+import StripePayment from './components/StripePayment'
 
 function App() {
 	return (
@@ -20,14 +22,15 @@ function App() {
 					<Header />
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/login" element={<Login/>}/>
+						<Route path="/login" element={<Login />} />
 						<Route path="/register" element={<Register />} />
-						<Route path="/cart" element={<Cart />} />
 						<Route element={<PrivateRoutes />}>
 							<Route path="/foodcourt" element={<Foodcourt />} />
-							
+							<Route path="/cart" element={<Cart />} />
 							<Route path="/foodcourt/menu" element={<MenuPage />} />
 							<Route path="/restaurant-menu/:id" element={<RestaurantMenu />} />
+							<Route path="/payment" element={<StripePayment />} />
+							<Route path="/success" element={<PaymentSuccess />} />
 						</Route>
 					</Routes>
 					<Footer />

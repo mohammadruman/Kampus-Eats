@@ -21,6 +21,14 @@ const Login = () => {
 		const userInfo = { email, password }
 		login(userInfo)
 	}
+
+	const handleDemoAccount = () => {
+		const email = 'dave@gmail.com'
+		const password = 'abcdabcd'
+		const userInfo = { email, password }
+		login(userInfo)
+	}
+
 	return (
 		<>
 			<form ref={loginForm} onSubmit={handleFormSubmit}>
@@ -44,10 +52,18 @@ const Login = () => {
 						<button className="w-full px-4 py-4 text-lg font-bold text-white bg-black rounded-lg hover:bg-gray-500 hover:text-black ">
 							Log in
 						</button>
-						<div className="flex justify-center items-center space-x-3">
-							<p>New here?</p>
-							<p className="text-gray-500 hover:text-black">
-								<Link to="/register">Register</Link>
+						<div className="flex justify-between items-center w-full">
+							<div className="flex items-center space-x-3">
+								<p>New here?</p>
+								<p className="text-gray-500 hover:text-black">
+									<Link to="/register">Register</Link>
+								</p>
+							</div>
+							<p
+								onClick={handleDemoAccount}
+								className="text-gray-500 hover:text-black cursor-pointer"
+							>
+								Use demo account
 							</p>
 						</div>
 					</div>
