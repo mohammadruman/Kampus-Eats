@@ -8,7 +8,7 @@ A comprehensive **campus food court management system For Kiit University** that
 
 ## 📌 Features
 ### User Panel
-- View menu items, categorized by meals (e.g., breakfast, lunch, extras).
+- View menu items.
 - Place Pre orders seamlessly with a straightforward interface.
 - Responsive design for accessibility across devices.
 
