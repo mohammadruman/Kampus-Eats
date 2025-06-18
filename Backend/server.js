@@ -9,7 +9,7 @@ import Stripe from 'stripe'
 import Payment from './models/payment.js'
 
 const stripe = new Stripe(
-	'sk_test_51P9M6fSG75cgTzAoH9wndoVN0XVMmXNXTrzOdyVwpGNiQUX6T1OKuH0kdD0ID3rwBhIk2n2NOZbqBuIDXCucbp6O00JGydyKHV'
+	
 )
 
 
@@ -17,7 +17,7 @@ const app = express()
 const PORT = process.env.PORT || 4000
 
 const MONGO_URI =
-	'mongodb+srv://mohammaderuman:foWYRU8fVoZw5Hbj@cluster0.jwg27.mongodb.net/paymentdb?retryWrites=true&w=majority'
+	
 const connectDB = async () => {
 	try {
 		await mongoose.connect(MONGO_URI)
