@@ -18,29 +18,27 @@ const Header = () => {
 						</Link>
 						{/* Navigation */}
 						<nav className="flex items-center gap-4 md:gap-8">
-							{user && (
-								<>
-									<Link
-										to="/foodcourt"
-										className="text-orange-600 font-semibold px-4 py-2 rounded-full hover:bg-orange-100 transition-colors duration-200"
-									>
-										Menu
-									</Link>
-									<Link
-										to="/orders"
-										className="text-orange-600 font-semibold px-4 py-2 rounded-full hover:bg-orange-100 transition-colors duration-200"
-									>
-										My Orders
-									</Link>
-									<Link
-										to="/cart"
-										className="relative text-orange-600 text-2xl px-4 py-2 rounded-full hover:bg-orange-100 transition-colors duration-200"
-										title="Cart"
-									>
-										🛒
-									</Link>
-								</>
-							)}
+							<>
+								<Link
+									to="/foodcourt"
+									className="text-orange-600 font-semibold px-4 py-2 rounded-full hover:bg-orange-100 transition-colors duration-200"
+								>
+									Menu
+								</Link>
+								<Link
+									to="/orders"
+									className="text-orange-600 font-semibold px-4 py-2 rounded-full hover:bg-orange-100 transition-colors duration-200"
+								>
+									My Orders
+								</Link>
+								<Link
+									to="/cart"
+									className="relative text-orange-600 text-2xl px-4 py-2 rounded-full hover:bg-orange-100 transition-colors duration-200"
+									title="Cart"
+								>
+									🛒
+								</Link>
+							</>
 							{user ? (
 								<button
 									onClick={logout}
