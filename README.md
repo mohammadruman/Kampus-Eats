@@ -28,33 +28,6 @@ A comprehensive **campus food court management system For Kiit University** that
 ---
 
 
-## 🖼️ Screenshots
-
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/8a15deb5-f4d9-4de6-9939-a3c7db1e53a4" />
- 
-**Login Panel**  
-<img width="958" alt="image" src="https://github.com/user-attachments/assets/e3fab620-46db-412d-a1ab-0c36acac0ae0" />
-
-**Food Court**  
-
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/75f6ce20-e8d1-4207-b2ee-88a3e96aa187" />
-
-**Search Features**  
-
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/e091e300-43b7-408d-8a74-ace149cd65bb" />
-
-**Menu**
-
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/4e117416-334d-4f26-9266-9e62d40e4596" />
-
-**Cart**
-
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/b3b8e950-a462-493c-b15e-be2bdaeb7c92" />
-
-**Payment**
-<img width="958" alt="image" src="https://github.com/user-attachments/assets/2c4cd476-4c39-405c-9a4c-db26d7165221" />
-
-
 
 ---
 
