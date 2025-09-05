@@ -19,19 +19,23 @@ import { useDispatch } from "react-redux";
     }
     return (
       <div className="flex items-center gap-4">
-          <button 
-            className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600"
-            onClick={e => handleincItemQuantity(e, itemId)}
-          >
-            +
-          </button>
-            <h3>{quantity}</h3>
-          <button 
-            className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600"
-            onClick={e => handleRemoveFromCart(e, itemId)}
-          >
-            -
-          </button>
+        <button
+          className="w-10 h-10 flex items-center justify-center bg-gradient-to-r from-orange-400 to-pink-400 text-white text-xl font-bold rounded-full shadow hover:scale-110 hover:from-orange-500 hover:to-pink-500 transition-all duration-200"
+          onClick={e => handleincItemQuantity(e, itemId)}
+          aria-label="Increase quantity"
+        >
+          +
+        </button>
+        <span className="text-lg font-bold text-orange-500 bg-white/80 px-4 py-2 rounded-full border border-orange-100 shadow-sm">
+          {quantity}
+        </span>
+        <button
+          className="w-10 h-10 flex items-center justify-center bg-gradient-to-r from-orange-400 to-pink-400 text-white text-xl font-bold rounded-full shadow hover:scale-110 hover:from-orange-500 hover:to-pink-500 transition-all duration-200"
+          onClick={e => handleRemoveFromCart(e, itemId)}
+          aria-label="Decrease quantity"
+        >
+          -
+        </button>
       </div>
     );
   };

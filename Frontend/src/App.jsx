@@ -13,7 +13,8 @@ import PrivateRoutes from './utils/PrivateRoutes'
 import Cart from './components/Cart'
 import PaymentSuccess from './components/PaymentSuccess'
 import StripePayment from './components/StripePayment'
-
+import Paymentalternative from './components/Paymentalternative'
+import Ordercomplete from './components/Ordercomplete'
 function App() {
 	return (
 		<Router>
@@ -29,8 +30,10 @@ function App() {
 							<Route path="/cart" element={<Cart />} />
 							<Route path="/foodcourt/menu" element={<MenuPage />} />
 							<Route path="/restaurant-menu/:id" element={<RestaurantMenu />} />
-							<Route path="/payment" element={<StripePayment />} />
+							{/* <Route path="/payment" element={<StripePayment />} /> */}
 							<Route path="/success" element={<PaymentSuccess />} />
+							<Route path="/payment" element={<Paymentalternative />} />
+							<Route path="/ordercomplete" element={<Ordercomplete />} />
 						</Route>
 					</Routes>
 					<Footer />

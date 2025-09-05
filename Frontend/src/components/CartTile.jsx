@@ -9,11 +9,11 @@ const CartTile = ({ restraunt }) => {
     }
 
     return (
-      <div className="w-1/2 bg-white shadow-md rounded-lg overflow-hidden border-2 m-4">
-        <div className="p-4">
-          <h3 className="text-xl font-bold mb-2 text-left">{restraunt.resName}</h3>
-          <div className="border-2">
-              {renderITems()}
+      <div className="w-full max-w-lg bg-white/90 border border-orange-100 rounded-2xl shadow-lg m-4 overflow-hidden">
+        <div className="px-6 py-4">
+          <h3 className="text-xl font-extrabold text-orange-500 mb-4 text-left">{restraunt.resName}</h3>
+          <div className="divide-y divide-orange-100">
+            {renderITems()}
           </div>
         </div>
       </div>
@@ -22,13 +22,13 @@ const CartTile = ({ restraunt }) => {
 
 function Item({ resId, item }){
   return(
-    <div className="flex justify-between items-center p-4">
-        <h4>{item.itemName}</h4>
-        <PlusMinusButton 
-          resId={resId}
-          itemId={item.itemId}
-          quantity={item.quantity}
-        />
+    <div className="flex justify-between items-center py-3">
+      <span className="text-orange-400 font-semibold text-base truncate">{item.itemName}</span>
+      <PlusMinusButton 
+        resId={resId}
+        itemId={item.itemId}
+        quantity={item.quantity}
+      />
     </div>
   )
 }
