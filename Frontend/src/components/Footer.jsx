@@ -33,9 +33,9 @@ const Footer = () => {
           <div className="space-y-2 min-w-[180px]">
             <h3 className="font-semibold text-orange-500">Developers</h3>
             <ul className="text-orange-600 text-sm space-y-1">
-              <li><a href="https://github.com/your-profile" className="hover:underline hover:text-pink-500">GitHub Profile</a></li>
-              <li><a href="https://linkedin.com/in/your-profile" className="hover:underline hover:text-pink-500">LinkedIn</a></li>
-              <li><a href="mailto:developer@example.com" className="hover:underline hover:text-pink-500">Contact Developer</a></li>
+              <li><a href="https://github.com/mohammadruman" className="hover:underline hover:text-pink-500">GitHub Profile</a></li>
+              <li><a href="https://www.linkedin.com/in/mohammadruman/" className="hover:underline hover:text-pink-500">LinkedIn</a></li>
+              <li><a href="mailto:mohammaderuman@gmail.com" className="hover:underline hover:text-pink-500">Contact Developer</a></li>
             </ul>
           </div>
         </div>
@@ -48,3 +48,4 @@ const Footer = () => {
 }
 
 export default Footer;
+
